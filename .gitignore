@@ -1,0 +1,9 @@
+*.bak
+*~
+*.swp
+*.swo
+*.tmp
+.config/fish/fish_variables
+*.log
+*.DS_Store
+
