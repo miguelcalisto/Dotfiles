@@ -1,0 +1,42 @@
+set max_sessions 5
+
+# Verificar se o tmux já está rodando e se há mais de 5 sessões
+if status is-interactive
+    if not set -q TMUX
+        # Obter o número de sessões ativas
+        set num_sessions (tmux list-sessions 2>/dev/null | wc -l)
+        
+        # Se o número de sessões for maior ou igual a max_sessions, matar a sessão mais antiga
+        if [ $num_sessions -ge $max_sessions ]
+            # Obter o nome da primeira sessão (a mais antiga)
+            set oldest_session (tmux list-sessions -F "#{session_name}" | head -n 1)
+            # Matar a sessão mais antiga
+            tmux kill-session -t $oldest_session
+        end
+        
+        # Gerar um nome único para a nova sessão
+        set session_name session_(date +%s)
+        
+        # Criar uma nova sessão tmux
+        tmux new-session -d -s $session_name
+        
+        # Anexar à nova sessão
+        tmux attach-session -t $session_name
+
+        # Função para matar o servidor tmux quando o terminal for fechado
+        function on_exit
+            tmux kill-server
+        end
+
+        trap on_exit EXIT
+    end
+end
+
+# Histórico de comandos (opcional)
+set -U fish_history_max_count 10000
+
+# Alias para visualizar histórico (opcional)
+alias history='history | tac | nl'
+
+# Ativar os bindings do Vim no Fish
+fish_vi_key_bindings

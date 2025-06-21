@@ -1,0 +1,52 @@
+# Configuração do i3blocks em ~/.config/i3blocks/config
+
+# Bloco Ethernet
+[ethernet]
+command=~/scripts/ethernet.sh  # Comando que será executado
+interval=5
+#color=#50FA7B  # Cor personalizada para Ethernet
+color=#BD93F9
+
+markup=pango
+
+[capslock]
+command=~/scripts/caps_lock.sh 
+interval=1
+color=#FF5555
+
+markup=pango
+
+#bloco de volume alsa
+[volume]
+command=~/scripts/alsa_vol.sh
+interval=5
+markup=pango
+
+#bloco de ram
+[ram_usage]
+command=~/scripts/ram_usage.sh
+interval=5
+color=#FF79C6  # Cor personalizada, você pode mudar
+
+markup=pango
+# Bloco da Bateria
+[battery]
+command=~/scripts/battery.sh  # Comando que será executado
+interval=5
+color=#50FA7B  # Cor verde para a Bateria
+
+markup=pango
+# Bloco da Temperatura do CPU
+[cpu_temperature]
+command=~/scripts/cpu_temperature.sh  # Comando que será executado
+interval=1
+color=#8BE9FD  # Cor ciano para a Temperatura do CPU
+
+markup=pango
+# Bloco da Hora
+[tztime]
+command=~/scripts/tztime.sh  # Comando que será executado
+interval=2
+markup=pango
+color=#FFFFFF  # Cor branca para a Hora
+
