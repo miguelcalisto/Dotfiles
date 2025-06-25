@@ -1,64 +1,90 @@
 return {
-  -- Tema e aparência
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000, -- garante que o tema seja carregado primeiro
-    lazy = false,    -- carrega imediatamente
-  },
+    -- Tema
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
+    },
 
-  {
-    "norcalli/nvim-colorizer.lua",
-    event = "BufReadPre", -- carrega quando abrir um buffer
-  },
+    -- Color highlight
+    {
+        "norcalli/nvim-colorizer.lua",
+    },
 
-  -- Lazy.nvim (gerenciador de plugins)
-  {
-    "folke/lazy.nvim",
-    lazy = true, -- isso é só para evitar recarregar sem necessidade
-  },
+    -- Lazy (gerenciador de plugins)
+    {
+        "folke/lazy.nvim",
+    },
 
-  -- Explorador de arquivos
-  {
-    "nvim-tree/nvim-tree.lua",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    cmd = { "NvimTreeToggle", "NvimTreeFocus" }, -- só carrega ao usar o comando
-  },
+    -- Arquivos
+    {
+        "nvim-tree/nvim-tree.lua",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+    },
 
-  -- Barra de status
-  {
-    "nvim-lualine/lualine.nvim",
-    lazy = false, -- carrega de imediato
-  },
+    -- Barra de status
+    {
+        "nvim-lualine/lualine.nvim",
+    },
 
+    -- Telescope
+    {
+        "nvim-telescope/telescope.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        config = function()
+            require("telescope").setup {}
+            vim.api.nvim_set_keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { noremap = true, silent = true })
+        end,
+    },
 
-  -- Autocompletar
-  { "hrsh7th/nvim-cmp", event = "InsertEnter" },
-  { "hrsh7th/cmp-nvim-lsp" },
-  { "L3MON4D3/LuaSnip" },
-  { "saadparwaiz1/cmp_luasnip" },
+    -- Which Key
+    {
+        "folke/which-key.nvim",
+    },
 
-  -- LSP (inteligência de código)
-  {
-    "neovim/nvim-lspconfig",
-    event = { "BufReadPre", "BufNewFile" },
-  },
+    -- LSP
+    {
+        "neovim/nvim-lspconfig",
+    },
 
-  -- Ajuda com atalhos
-  {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
-  },
-  {
-    'nvim-telescope/telescope.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-    config = function()
-      require('telescope').setup{}
-      -- Exemplo de keymap
-      vim.api.nvim_set_keymap('n', '<leader>ff', "<cmd>Telescope find_files<cr>", { noremap = true })
-      vim.api.nvim_set_keymap('n', '<leader>fg', "<cmd>Telescope live_grep<cr>", { noremap = true })
-    end
-  },
+    -- Autocomplete
+    {
+        "hrsh7th/nvim-cmp",
+        dependencies = {
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-path",
+            "hrsh7th/cmp-nvim-lsp",
+            "L3MON4D3/LuaSnip",
+            "saadparwaiz1/cmp_luasnip",
+            "rafamadriz/friendly-snippets",
+        },
+        config = function()
+            local cmp = require("cmp")
+            local luasnip = require("luasnip")
+
+            require("luasnip.loaders.from_vscode").lazy_load()
+
+            cmp.setup({
+                snippet = {
+                    expand = function(args)
+                        luasnip.lsp_expand(args.body)
+                    end,
+                },
+                mapping = cmp.mapping.preset.insert({
+                    ["<Tab>"] = cmp.mapping.select_next_item(),
+                    ["<S-Tab>"] = cmp.mapping.select_prev_item(),
+                    ["<CR>"] = cmp.mapping.confirm({ select = true }),
+                    ["<C-Space>"] = cmp.mapping.complete(),
+                }),
+                sources = cmp.config.sources({
+                    { name = "nvim_lsp" },
+                    { name = "luasnip" },
+                    { name = "buffer" },
+                    { name = "path" },
+                }),
+            })
+        end,
+    },
 }
-
 
