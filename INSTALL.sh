@@ -43,4 +43,4 @@ echo "🔐 Tornando scripts executáveis..."
 find "$SCRIPTS_DEST" -type f -iname "*.sh" -exec chmod +x {} \;
 find "$SCRIPTS_DEST" -type f -iname "*.fish" -exec chmod +x {} \;
 
-echo "✅ Instalação concluída com sucesso!"
+echo "✅ Instalação concluída com sucesso!!"
