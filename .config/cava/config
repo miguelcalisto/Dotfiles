@@ -1,0 +1,22 @@
+[general]
+framerate = 60
+bars = 60
+autosens = 1
+sensitivity = 100
+
+[input]
+method = pulse
+
+[output]
+method = ncurses
+channels = stereo
+
+
+[color]
+foreground = red
+background = default
+
+
+[smoothing]
+integral = 77
+

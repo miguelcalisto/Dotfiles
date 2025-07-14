@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/home/debian/.cache/BraveSoftware/Brave-Browser/Default/Cache/Cache_Data'
+let g:netrw_dirhist_8='/home/debian/.cache/BraveSoftware/Brave-Browser/Default/Cache'
+let g:netrw_dirhist_7='/home/debian/.cache/BraveSoftware/Brave-Browser/Default'
+let g:netrw_dirhist_6='/home/debian/.cache/BraveSoftware/Brave-Browser'
+let g:netrw_dirhist_5='/home/debian/.cache/BraveSoftware'
+let g:netrw_dirhist_4='/home/debian/.cache'
+let g:netrw_dirhist_3='/home/debian'
+let g:netrw_dirhist_2='/home/debian/.vim'
+let g:netrw_dirhist_1='/home/debian/AULA/.git/logs'
+let g:netrw_dirhist_0='/home/debian/AULA/.git'

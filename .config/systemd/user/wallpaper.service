@@ -1,0 +1,9 @@
+[Unit]
+Description=Mudar wallpaper à meia-noite
+
+[Service]
+Type=oneshot
+Environment="DISPLAY=:0"
+Environment="DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus"
+ExecStart=/usr/bin/fish /home/debian/SCRIPTS/scriptDataDoAno.fish
+

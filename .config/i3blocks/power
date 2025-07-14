@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo "<span size=\"19000\"><b> ⏻ </b></span>"
+if [ "$BLOCK_BUTTON" ]; then
+    wlogout
+fi
+
+

@@ -1,0 +1,48 @@
+set number
+syntax on
+set wrap
+set mouse=a
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+set smartindent
+
+" Plugin manager
+call plug#begin('~/.local/share/nvim/plugged')
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+Plug 'norcalli/nvim-colorizer.lua'
+call plug#end()
+
+set termguicolors
+
+" Tema Catppuccin
+lua << EOF
+require("catppuccin").setup({
+    flavour = "mocha", -- latte, frappe, macchiato
+})
+EOF
+
+colorscheme catppuccin
+hi Normal guibg=NONE ctermbg=NONE
+hi NormalNC guibg=NONE ctermbg=NONE
+hi EndOfBuffer guibg=NONE ctermbg=NONE
+highlight LineNr guifg=#f9e2af guibg=NONE
+highlight CursorLineNr guifg=#facc15 guibg=NONE gui=bold
+
+" Colorizer
+lua << EOF
+require'colorizer'.setup({
+  '*', -- aplica a todos os tipos de arquivo
+}, {
+  RGB      = true;
+  RRGGBB   = true;
+  names    = false;
+  RRGGBBAA = true;
+  rgb_fn   = true;
+  hsl_fn   = true;
+  css      = true;
+  css_fn   = true;
+})
+EOF
+
