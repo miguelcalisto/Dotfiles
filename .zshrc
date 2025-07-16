@@ -157,3 +157,25 @@ fi
 
 bindkey -v
 eval "$(mise activate zsh)"
+
+
+
+#historico
+
+# Aumenta o número de comandos mantidos no histórico
+HISTSIZE=100000            # comandos mantidos na sessão atual
+SAVEHIST=100000            # comandos salvos no arquivo .zsh_history
+
+# Define o arquivo onde o histórico é salvo
+HISTFILE=~/.zsh_history
+
+# Opções de histórico recomendadas
+setopt APPEND_HISTORY           # adiciona em vez de sobrescrever
+setopt HIST_IGNORE_DUPS         # ignora duplicatas consecutivas
+setopt HIST_IGNORE_ALL_DUPS     # remove todas duplicatas
+setopt HIST_REDUCE_BLANKS       # remove espaços extras
+setopt INC_APPEND_HISTORY       # salva imediatamente no arquivo
+setopt SHARE_HISTORY            # compartilha histórico entre sessões
+
+# Opcional: melhora busca incremental com Ctrl+R
+bindkey "^R" history-incremental-search-backward
