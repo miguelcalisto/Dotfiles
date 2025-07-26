@@ -15,18 +15,16 @@ Este repositório contém a minha configuração pessoal de **Dotfiles** para **
 
 1. **Clonar o Repositório**
 
-
-   ```bash
-      git clone https://github.com/miguelcalisto/Dotfiles.git ~/.dotfiles
+```bash
+   git clone https://github.com/miguelcalisto/Dotfiles.git ~/.dotfiles
+```
 
 ## Instalando Dependências
 ```
 sudo apt update
 sudo apt install i3 rofi neofetch vim neovim zsh fish tmux chafa i3blocks git
 ```
-
 ## Capturas de Tela
-
 
 ![Área de Trabalho](prints/areadetrabalho.png)
 
@@ -39,7 +37,6 @@ sudo apt install i3 rofi neofetch vim neovim zsh fish tmux chafa i3blocks git
 ![Screenshot 3](prints/Captura%20de%20tela%20de%202025-07-16%2000-21-35.png)
 
 ![Screenshot 4](prints/Captura%20de%20tela%20de%202025-07-16%2000-23-43.png)
-
 
 ![Screenshot 5](prints/tresjanelas.png)
 
