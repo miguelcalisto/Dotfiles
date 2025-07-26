@@ -1,4 +1,4 @@
-# Dotfiles para Debian 12 com i3wm, Rofi, Zsh, Vim , Neovim , i3blocks , Fish , Tmux , Script que muda o wallpaper todo dia .
+# Dotfiles para Debian 12 com i3wm, Rofi, Zsh, Vim , Neovim , i3blocks , Fish , Tmux .
 
 Este repositório contém a minha configuração pessoal de **Dotfiles** para **Debian 12** com as seguintes ferramentas:
 
@@ -9,13 +9,21 @@ Este repositório contém a minha configuração pessoal de **Dotfiles** para **
 - **Zsh** e **Fish** (Shell)
 - **Tmux** (Multiplexador de terminal)
 - **i3blocks** (Barra de status para i3)
+- **Script que Muda o Wallpaper Todo Dia** [Link para o repositório](https://github.com/miguelcalisto/Script-para-mudar-de-wallpaper-todo-dia.git)
 
 ## Clonando
 
 1. **Clonar o Repositório**
 
+
    ```bash
-   https://github.com/miguelcalisto/Dotfiles.git
+      git clone https://github.com/miguelcalisto/Dotfiles.git ~/.dotfiles
+
+## Instalando Dependências
+```
+sudo apt update
+sudo apt install i3 rofi neofetch vim neovim zsh fish tmux chafa i3blocks git
+```
 
 ## Capturas de Tela
 
