@@ -16,7 +16,7 @@ Este repositório contém a minha configuração pessoal de **Dotfiles** para **
 1. **Clonar o Repositório**
 
 ```bash
-   git clone https://github.com/miguelcalisto/Dotfiles.git ~/.dotfiles
+   git clone https://github.com/miguelcalisto/Dotfiles.git 
 ```
 
 ## Instalando Dependências
