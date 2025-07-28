@@ -26,6 +26,8 @@ sudo apt install i3 rofi neofetch vim neovim zsh fish tmux chafa i3blocks git
 ```
 ## Capturas de Tela
 
+![Screenshot 8](prints/lulaneofetch.png)
+
 ![Área de Trabalho](prints/areadetrabalho.png)
 
 ![Terminal](prints/terminal.png)
@@ -44,4 +46,3 @@ sudo apt install i3 rofi neofetch vim neovim zsh fish tmux chafa i3blocks git
 
 ![Screenshot 7](prints/song.png)
 
-![Screenshot 8](prints/lulaneofetch.png)
