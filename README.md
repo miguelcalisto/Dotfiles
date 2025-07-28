@@ -5,7 +5,7 @@ Este repositório contém a minha configuração pessoal de **Dotfiles** para **
 - **Rofi** (Lançador de aplicativos)
 - **Neofetch** (Informações do sistema)
 - **[Vim](https://www.vim.org/) / [Neovim](https://neovim.io/)** (Editores de texto)
-- **[Zsh](https://https://ohmyz.sh/)** e **[Fish](https://fishshell.com/)** (Shell)
+- **[Zsh](https://ohmyz.sh/)** e **[Fish](https://fishshell.com/)** (Shell)
 - **Tmux** (Multiplexador de terminal)
 - **i3blocks** (Barra de status para i3)
 - **Script que Muda o Wallpaper Todo Dia** [Link para o repositório](https://github.com/miguelcalisto/Script-para-mudar-de-wallpaper-todo-dia.git)
