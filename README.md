@@ -5,7 +5,7 @@ Este repositório contém a minha configuração pessoal de **Dotfiles** para **
 - **[Rofi](https://draculatheme.com/rofi)** (Lançador de aplicativos)
 - **[Neofetch](https://github.com/dylanaraps/neofetch)** (Informações do sistema)
 - **[Vim](https://www.vim.org/) / [Neovim](https://neovim.io/)** (Editores de texto)
-- **[Zsh](https://ohmyz.sh/)** e **[Fish](https://fishshell.com/)** (Shell)
+- **[Zsh](https://ohmyz.sh/)** com **[Oh My Zsh](https://ohmyz.sh/)** e **[Fish](https://fishshell.com/)** (Shell)
 - **[Tmux](https://github.com/tmux/tmux/wiki)** (Multiplexador de terminal)
 - **[i3blocks](https://github.com/vivien/i3blocks)** (Barra de status para i3)
 
@@ -28,8 +28,8 @@ Este repositório contém a minha configuração pessoal de **Dotfiles** para **
 
 ## Instalando Dependências
 ```
-sudo apt update
-sudo apt install rofi neofetch vim neovim zsh fish tmux chafa i3blocks git diodon i3lock i3-wm pcmanfm tilix zsh
+sudo apt update -y
+sudo apt install rofi neofetch vim neovim zsh fish tmux chafa i3blocks git diodon i3lock i3-wm pcmanfm tilix zsh 
 
 ```
 ## Capturas de Tela
