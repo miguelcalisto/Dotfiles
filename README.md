@@ -7,7 +7,8 @@ Este repositório contém a minha configuração pessoal de **Dotfiles** para **
 - **[Vim](https://www.vim.org/) / [Neovim](https://neovim.io/)** (Editores de texto)
 - **[Zsh](https://ohmyz.sh/)** e **[Fish](https://fishshell.com/)** (Shell)
 - **Tmux** (Multiplexador de terminal)
-- **i3blocks** (Barra de status para i3)
+- **[i3blocks](https://github.com/vivien/i3blocks)** (Barra de status para i3)
+
 - **Script que Muda o Wallpaper Todo Dia** [Link para o repositório](https://github.com/miguelcalisto/Script-para-mudar-de-wallpaper-todo-dia.git)
 - A maioria dos wallpapers são de:
   - [GitHub - dharmx/walls](https://github.com/dharmx/walls/tree/main)
