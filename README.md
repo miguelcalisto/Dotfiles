@@ -2,8 +2,8 @@
 
 Este repositório contém a minha configuração pessoal de **Dotfiles** para **Debian 12** com as seguintes ferramentas:
 - **[i3wm](https://i3wm.org/)** (Gerenciador de janelas)
-- **Rofi** (Lançador de aplicativos)
-- **Neofetch** (Informações do sistema)
+- **[Rofi](https://draculatheme.com/rofi)** (Lançador de aplicativos)
+- **[Neofetch](https://github.com/dylanaraps/neofetch)** (Informações do sistema)
 - **[Vim](https://www.vim.org/) / [Neovim](https://neovim.io/)** (Editores de texto)
 - **[Zsh](https://ohmyz.sh/)** e **[Fish](https://fishshell.com/)** (Shell)
 - **[Tmux](https://github.com/tmux/tmux/wiki)** (Multiplexador de terminal)
