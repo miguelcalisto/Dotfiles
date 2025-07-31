@@ -29,7 +29,7 @@ Este repositório contém a minha configuração pessoal de **Dotfiles** para **
 ## Instalando Dependências
 ```
 sudo apt update -y
-sudo apt install rofi neofetch vim neovim zsh fish tmux chafa i3blocks git diodon i3lock i3-wm pcmanfm tilix zsh -y
+sudo apt install rofi neofetch vim neovim zsh fish tmux chafa i3blocks git diodon i3lock i3-wm pcmanfm tilix zsh fonts-firacode -y
 
 ```
 ## Capturas de Tela
