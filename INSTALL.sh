@@ -13,6 +13,7 @@ sudo apt install -y \
     i3blocks \
     rofi \
     fish \
+    zsh \
     tmux \
     htop \
     btop \
