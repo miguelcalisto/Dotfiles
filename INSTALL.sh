@@ -91,8 +91,8 @@ cp .config/tilix/schemes/* ~/.config/tilix/schemes/
 
 # Copiar as pastas 'scripts' e 'SCRITPS' para o diretório home
 echo "Copiando as pastas 'scripts' e 'SCRITPS' para o diretório home..."
-cp -r scripts ~/.scripts
-cp -r SCRITPS ~/.SCRITPS
+cp -r scripts ~/scripts
+cp -r SCRITPS ~/SCRITPS
 
 # Configurar o Neovim (instalar pacotes e configurações)
 #echo "Configurando o Neovim..."

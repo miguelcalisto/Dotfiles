@@ -2,24 +2,7 @@
 
 # Script para desinstalar pacotes e remover configurações
 
-# Remover pacotes instalados
-echo "Removendo pacotes instalados..."
-sudo apt remove --purge -y \
-    neovim \
-    i3 \
-    i3blocks \
-    rofi \
-    fish \
-    zsh \
-    tmux \
-    htop \
-    btop \
-    kitty \
-    cava \
 
-# Remover pacotes que não são mais necessários
-echo "Removendo pacotes desnecessários..."
-sudo apt autoremove --purge -y
 
 # Excluir arquivos de configuração
 echo "Removendo arquivos de configuração..."
