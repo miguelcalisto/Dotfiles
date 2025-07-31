@@ -27,9 +27,11 @@ sudo apt install -y \
     python3-pip \
     python3-venv \
     fonts-firacode
-
+    i3-wm \
+    i3lock \
+    
 # Clonar o repositório de temas para o Fish
-echo "Clonando o repositório de plugins e temas do Fish..."
+#echo "Clonando o repositório de plugins e temas do Fish..."
 #git clone https://github.com/jorgebucaran/fisher.git ~/.config/fish/functions
 
 # Instalar os plugins do Fish
