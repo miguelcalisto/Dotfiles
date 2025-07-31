@@ -28,10 +28,6 @@ sudo apt install -y \
     python3-venv \
     fonts-firacode
 
-# Instalar o zsh e definir como shell padrão
-echo "Instalando o Zsh e definindo como shell padrão..."
-chsh -s $(which zsh)
-
 # Clonar o repositório de temas para o Fish
 echo "Clonando o repositório de plugins e temas do Fish..."
 git clone https://github.com/jorgebucaran/fisher.git ~/.config/fish/functions
