@@ -14,6 +14,7 @@ sudo apt install -y \
     rofi \
     fish \
     zsh \
+    picom \
     tmux \
     htop \
     btop \
