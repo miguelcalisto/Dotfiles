@@ -12,7 +12,6 @@ sudo apt install -y \
     i3 \
     i3blocks \
     rofi \
-    zsh \
     fish \
     tmux \
     htop \
@@ -30,11 +29,11 @@ sudo apt install -y \
 
 # Clonar o repositório de temas para o Fish
 echo "Clonando o repositório de plugins e temas do Fish..."
-git clone https://github.com/jorgebucaran/fisher.git ~/.config/fish/functions
+#git clone https://github.com/jorgebucaran/fisher.git ~/.config/fish/functions
 
 # Instalar os plugins do Fish
-echo "Instalando plugins do Fish..."
-fish -c "fisher install"
+#echo "Instalando plugins do Fish..."
+#fish -c "fisher install"
 
 # Sincronizar o diretório de configuração
 echo "Copiando os arquivos de configuração..."
@@ -55,10 +54,10 @@ cp .tmux.conf ~/
 cp .vimrc ~/
 
 # Copiar o arquivo .p10k.zsh
-cp .p10k.zsh ~/
+#cp .p10k.zsh ~/
 
 # Copiar o arquivo de Neovim (init.lua ou init.vim)
-cp .config/nvim/init.lua ~/.config/nvim/
+#cp .config/nvim/init.lua ~/.config/nvim/
 
 # Copiar o arquivo de configuração do i3
 cp .config/i3/config ~/.config/i3/
@@ -82,13 +81,13 @@ cp .config/htop/htoprc ~/.config/htop/
 cp .config/btop/btop.conf ~/.config/btop/
 
 # Copiar o arquivo de configuração do cava
-cp .config/cava/cava ~/.config/cava/
+#cp .config/cava/cava ~/.config/cava/
 
 # Copiar o arquivo de configuração do tilix
 cp .config/tilix/schemes/* ~/.config/tilix/schemes/
 
 # Copiar os arquivos de systemd
-cp .config/systemd/user/* ~/.config/systemd/user/
+#cp .config/systemd/user/* ~/.config/systemd/user/
 
 # Copiar as pastas 'scripts' e 'SCRITPS' para o diretório home
 echo "Copiando as pastas 'scripts' e 'SCRITPS' para o diretório home..."
@@ -96,15 +95,15 @@ cp -r scripts ~/.scripts
 cp -r SCRITPS ~/.SCRITPS
 
 # Configurar o Neovim (instalar pacotes e configurações)
-echo "Configurando o Neovim..."
-nvim +PlugInstall +qall
+#echo "Configurando o Neovim..."
+#nvim +PlugInstall +qall
 
 # Instalar a fonte FiraCode (para Zsh e outras configurações)
 echo "Instalando a fonte FiraCode..."
 sudo apt install -y fonts-firacode
 
-echo "Instalando o Zsh e definindo como shell padrão..."
-chsh -s $(which zsh)
+#echo "Instalando o Zsh e definindo como shell padrão..."
+#chsh -s $(which zsh)
 
 # Finalizar
 echo "Instalação concluída! Reinicie sua sessão para aplicar as mudanças."
