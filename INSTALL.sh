@@ -98,6 +98,9 @@ nvim +PlugInstall +qall
 echo "Instalando a fonte FiraCode..."
 sudo apt install -y fonts-firacode
 
+echo "Instalando o Zsh e definindo como shell padrão..."
+chsh -s $(which zsh)
+
 # Finalizar
 echo "Instalação concluída! Reinicie sua sessão para aplicar as mudanças."
 
