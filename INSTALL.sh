@@ -90,6 +90,11 @@ cp .config/tilix/schemes/* ~/.config/tilix/schemes/
 # Copiar os arquivos de systemd
 cp .config/systemd/user/* ~/.config/systemd/user/
 
+# Copiar as pastas 'scripts' e 'SCRITPS' para o diretório home
+echo "Copiando as pastas 'scripts' e 'SCRITPS' para o diretório home..."
+cp -r scripts ~/.scripts
+cp -r SCRITPS ~/.SCRITPS
+
 # Configurar o Neovim (instalar pacotes e configurações)
 echo "Configurando o Neovim..."
 nvim +PlugInstall +qall
