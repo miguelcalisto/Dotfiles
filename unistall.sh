@@ -1,40 +1,41 @@
 #!/bin/bash
 
-# Script para desinstalar pacotes e remover configurações
+# Script para desinstalar os dotfiles (remoção de links simbólicos)
 
+echo "Removendo links simbólicos dos arquivos de configuração..."
 
+# Arquivos da home
+rm -fv ~/.bashrc
+rm -fv ~/.zshrc
+rm -fv ~/.tmux.conf
+rm -fv ~/.vimrc
+# rm -fv ~/.p10k.zsh
 
-# Excluir arquivos de configuração
-echo "Removendo arquivos de configuração..."
-rm -rf ~/.config/nvim
-rm -rf ~/.config/i3
-rm -rf ~/.config/i3blocks
-rm -rf ~/.config/rofi
-rm -rf ~/.config/kitty
-rm -rf ~/.config/neofetch
-rm -rf ~/.config/htop
-rm -rf ~/.config/btop
-rm -rf ~/.config/cava
-rm -rf ~/.config/tilix
-rm -rf ~/.config/fish
-rm -rf ~/.config/fish/functions/fisher
+# Diretórios de configuração
+rm -fv ~/.config/i3/config
+rm -fv ~/.config/i3blocks/config
+rm -fv ~/.config/rofi/config.rasi
+rm -fv ~/.config/kitty/kitty.conf
+rm -fv ~/.config/neofetch/config.conf
+rm -fv ~/.config/htop/htoprc
+rm -fv ~/.config/btop/btop.conf
 
-# Excluir arquivos do usuário
-echo "Removendo arquivos de configuração do usuário..."
-rm -f ~/.zshrc
-rm -f ~/.tmux.conf
-rm -f ~/.vimrc
-rm -f ~/.p10k.zsh
-rm -f ~/.gitconfig
+# Tilix schemes
+for scheme in .config/tilix/schemes/*; do
+    name=$(basename "$scheme")
+    rm -fv ~/.config/tilix/schemes/"$name"
+done
 
-# Remover fontes
-echo "Removendo a fonte FiraCode..."
-sudo apt remove --purge -y fonts-firacode
+# Scripts
+for file in scripts/*; do
+    name=$(basename "$file")
+    rm -fv ~/scripts/"$name"
+done
 
-# Restaurar o shell padrão (bash)
-echo "Restaurando o shell padrão..."
-chsh -s $(which bash)
+for file in SCRIPTS/*; do
+    name=$(basename "$file")
+    rm -fv ~/SCRIPTS/"$name"
+done
 
-# Finalizar
-echo "Desinstalação concluída! Você pode precisar reiniciar para aplicar as mudanças."
+echo "Desinstalação concluída. Os arquivos reais permanecem no seu repositório."
 
