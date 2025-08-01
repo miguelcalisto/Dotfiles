@@ -66,6 +66,10 @@ mkdir -p ~/scripts ~/SCRIPTS
 ln -sf $(pwd)/scripts/* ~/scripts/
 ln -sf $(pwd)/SCRIPTS/* ~/SCRIPTS/
 
+# Arquivos extras do i3 e i3blocks
+ln -sf "$(pwd)/.config/i3/powermenu.sh" ~/.config/i3/powermenu.sh
+ln -sf "$(pwd)/.config/i3blocks/power" ~/.config/i3blocks/power
+
 # Instalar a fonte FiraCode (caso ainda não esteja instalada)
 echo "Instalando a fonte FiraCode..."
 sudo apt install -y fonts-firacode
