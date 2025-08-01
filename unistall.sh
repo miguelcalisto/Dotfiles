@@ -37,5 +37,8 @@ for file in SCRIPTS/*; do
     rm -fv ~/SCRIPTS/"$name"
 done
 
+rm -fv ~/.config/i3/powermenu.sh
+rm -fv ~/.config/i3blocks/power
+
 echo "Desinstalação concluída. Os arquivos reais permanecem no seu repositório."
 
