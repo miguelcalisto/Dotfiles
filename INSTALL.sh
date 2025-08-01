@@ -28,87 +28,51 @@ sudo apt install -y \
     wget \
     python3-pip \
     python3-venv \
-    fonts-firacode
+    fonts-firacode \
     i3-wm \
-    i3lock \
-    
-# Clonar o repositório de temas para o Fish
-#echo "Clonando o repositório de plugins e temas do Fish..."
-#git clone https://github.com/jorgebucaran/fisher.git ~/.config/fish/functions
+    i3lock
 
-# Instalar os plugins do Fish
-#echo "Instalando plugins do Fish..."
-#fish -c "fisher install"
+# Criar diretórios de configuração se não existirem
+mkdir -p ~/.config/{i3,i3blocks,rofi,kitty,neofetch,htop,btop,tilix/schemes,systemd/user}
+mkdir -p ~/scripts ~/SCRIPTS
 
-# Sincronizar o diretório de configuração
-echo "Copiando os arquivos de configuração..."
+# Linkar arquivos de configuração da home
+echo "Criando links simbólicos para arquivos da home..."
+ln -sf "$(pwd)/.bashrc" ~/.bashrc
+ln -sf "$(pwd)/.zshrc" ~/.zshrc
+ln -sf "$(pwd)/.tmux.conf" ~/.tmux.conf
+ln -sf "$(pwd)/.vimrc" ~/.vimrc
+# ln -sf "$(pwd)/.p10k.zsh" ~/.p10k.zsh
 
-# Copiar os arquivos de configuração para o diretório correto
-cp -r .config/* ~/.config/
+# Linkar arquivos do .config
+echo "Criando links simbólicos para arquivos do .config..."
 
-# Copiar o arquivo .bashrc
-cp .bashrc ~/
+ln -sf "$(pwd)/.config/i3/config" ~/.config/i3/config
+ln -sf "$(pwd)/.config/i3blocks/config" ~/.config/i3blocks/config
+ln -sf "$(pwd)/.config/rofi/config.rasi" ~/.config/rofi/config.rasi
+ln -sf "$(pwd)/.config/kitty/kitty.conf" ~/.config/kitty/kitty.conf
+ln -sf "$(pwd)/.config/neofetch/config.conf" ~/.config/neofetch/config.conf
+ln -sf "$(pwd)/.config/htop/htoprc" ~/.config/htop/htoprc
+ln -sf "$(pwd)/.config/btop/btop.conf" ~/.config/btop/btop.conf
 
-# Copiar o arquivo .zshrc
-cp .zshrc ~/
+# Tilix (loop para múltiplos esquemas)
+for scheme in .config/tilix/schemes/*; do
+    ln -sf "$(pwd)/$scheme" ~/.config/tilix/schemes/
+done
 
-# Copiar o arquivo .tmux.conf
-cp .tmux.conf ~/
 
-# Copiar o arquivo .vimrc
-cp .vimrc ~/
+# Linkar scripts
+mkdir -p ~/scripts ~/SCRIPTS
+ln -sf $(pwd)/scripts/* ~/scripts/
+ln -sf $(pwd)/SCRIPTS/* ~/SCRIPTS/
 
-# Copiar o arquivo .p10k.zsh
-#cp .p10k.zsh ~/
-
-# Copiar o arquivo de Neovim (init.lua ou init.vim)
-#cp .config/nvim/init.lua ~/.config/nvim/
-
-# Copiar o arquivo de configuração do i3
-cp .config/i3/config ~/.config/i3/
-
-# Copiar o arquivo de configuração do i3blocks
-cp .config/i3blocks/config ~/.config/i3blocks/
-
-# Copiar o arquivo de configuração do rofi
-cp .config/rofi/config.rasi ~/.config/rofi/
-
-# Copiar o arquivo de configuração do kitty
-cp .config/kitty/kitty.conf ~/.config/kitty/
-
-# Copiar o arquivo de configuração do neofetch
-cp .config/neofetch/config.conf ~/.config/neofetch/
-
-# Copiar o arquivo de configuração do htop
-cp .config/htop/htoprc ~/.config/htop/
-
-# Copiar o arquivo de configuração do btop
-cp .config/btop/btop.conf ~/.config/btop/
-
-# Copiar o arquivo de configuração do cava
-#cp .config/cava/cava ~/.config/cava/
-
-# Copiar o arquivo de configuração do tilix
-cp .config/tilix/schemes/* ~/.config/tilix/schemes/
-
-# Copiar os arquivos de systemd
-#cp .config/systemd/user/* ~/.config/systemd/user/
-
-# Copiar as pastas 'scripts' e 'SCRITPS' para o diretório home
-echo "Copiando as pastas 'scripts' e 'SCRITPS' para o diretório home..."
-cp -r ./scripts ~/scripts
-cp -r ./SCRIPTS ~/SCRIPTS
-
-# Configurar o Neovim (instalar pacotes e configurações)
-#echo "Configurando o Neovim..."
-#nvim +PlugInstall +qall
-
-# Instalar a fonte FiraCode (para Zsh e outras configurações)
+# Instalar a fonte FiraCode (caso ainda não esteja instalada)
 echo "Instalando a fonte FiraCode..."
 sudo apt install -y fonts-firacode
 
-#echo "Instalando o Zsh e definindo como shell padrão..."
-#chsh -s $(which zsh)
+# Definir o Zsh como shell padrão (opcional)
+# echo "Definindo o Zsh como shell padrão..."
+# chsh -s $(which zsh)
 
 # Finalizar
 echo "Instalação concluída! Reinicie sua sessão para aplicar as mudanças."
