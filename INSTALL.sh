@@ -10,6 +10,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install -y \
     neovim \
     i3 \
+    wlogout \
     i3blocks \
     rofi \
     fish \
@@ -95,8 +96,8 @@ cp .config/tilix/schemes/* ~/.config/tilix/schemes/
 
 # Copiar as pastas 'scripts' e 'SCRITPS' para o diretório home
 echo "Copiando as pastas 'scripts' e 'SCRITPS' para o diretório home..."
-cp -r scripts ~/scripts
-cp -r SCRITPS ~/SCRITPS
+cp -r ./scripts ~/scripts
+cp -r ./SCRIPTS ~/SCRIPTS
 
 # Configurar o Neovim (instalar pacotes e configurações)
 #echo "Configurando o Neovim..."
