@@ -16,7 +16,7 @@ Este repositório contém a minha configuração pessoal de **Dotfiles** para **
   - [Wallpaperflare](https://www.wallpaperflare.com/)
   - [GitHub - Narmis-E/onedark-wallpapers](https://github.com/Narmis-E/onedark-wallpapers)
   - [Wallhaven](https://wallhaven.cc/)
-- Fontes [Nerd Fonts](https://www.nerdfonts.com/)
+- **Fontes** [Nerd Fonts](https://www.nerdfonts.com/)
 ## Clonando
 
 1. **Clonar o Repositório**
