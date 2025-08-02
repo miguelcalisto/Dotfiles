@@ -78,6 +78,11 @@ sudo apt install -y fonts-firacode
 # echo "Definindo o Zsh como shell padrão..."
 # chsh -s $(which zsh)
 
+# Criar diretório do picom se não existir
+mkdir -p ~/.config/picom
+
+# Linkar configuração do picom
+ln -sf "$(pwd)/.config/picom/picom.conf" ~/.config/picom/picom.conf
 # Finalizar
 echo "Instalação concluída! Reinicie sua sessão para aplicar as mudanças."
 
