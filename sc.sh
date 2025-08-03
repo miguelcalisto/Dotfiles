@@ -5,7 +5,7 @@ arquivo="temperaturas_cpu.txt"
 > "$arquivo"  # Limpa o arquivo
 
 # Coleta por 3600 segundos (1 hora)
-for ((i=0; i<14400; i++)); do
+for ((i=0; i<3600; i++)); do
     # Pega temperaturas dos núcleos
     temperaturas=$(sensors | grep -E 'Core [0-9]:' | awk '{print $3}' | sed 's/+//;s/°C//')
 
@@ -28,6 +28,11 @@ for ((i=0; i<14400; i++)); do
     sleep 1
 done
 date=$(date +%H-%M)
+
+hora_atual=$(date +%H:%M)
+media=$(python3.11 media.py)
+echo "$media log de  $hora_atual" >> ~/MEDIAS.txt
+
 echo INCIO $date_inicio
 echo FIM $date
 
