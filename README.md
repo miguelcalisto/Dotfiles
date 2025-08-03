@@ -31,6 +31,12 @@ sudo apt update -y
 sudo apt install rofi neofetch vim neovim zsh fish tmux chafa i3blocks git diodon i3lock i3-wm pcmanfm tilix zsh fonts-firacode -y
 
 ```
+## Utilizando o INSTALL.sh
+**Isso vai gerar links simbolicos de Dotfiles para seus arquivos em .config**
+```
+sudo chmod +x INSTALL.sh
+./INSTALL.sh
+```
 ## Capturas de Tela
 
 ![Screenshot 8](prints/lulaneofetch.png)
