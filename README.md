@@ -37,6 +37,12 @@ sudo apt install rofi neofetch vim neovim zsh fish tmux chafa i3blocks git diodo
 sudo chmod +x INSTALL.sh
 ./INSTALL.sh
 ```
+## Remover
+**isso vai remover os links simbolicos do Dotfiles em .config**
+````
+sudo chmod +x unistall.sh
+./unistall.sh
+````
 ## Capturas de Tela
 
 ![Screenshot 8](prints/lulaneofetch.png)
