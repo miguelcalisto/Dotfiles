@@ -10,6 +10,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install -y \
     neovim \
     i3 \
+    dunst \
     wlogout \
     i3blocks \
     rofi \
@@ -83,6 +84,11 @@ mkdir -p ~/.config/picom
 
 # Linkar configuração do picom
 ln -sf "$(pwd)/.config/picom/picom.conf" ~/.config/picom/picom.conf
+
+# Linkar a configuração do dunst
+mkdir -p ~/.config/dunst
+ln -sf "$(pwd)/.config/dunst/dunstrc" ~/.config/dunst/dunstrc
+
 # Finalizar
 echo "Instalação concluída! Reinicie sua sessão para aplicar as mudanças."
 

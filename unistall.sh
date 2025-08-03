@@ -39,6 +39,8 @@ done
 
 rm -fv ~/.config/i3/powermenu.sh
 rm -fv ~/.config/i3blocks/power
+# Remover links do dunst
+rm -fv ~/.config/dunst/dunstrc
 
 echo "Desinstalação concluída. Os arquivos reais permanecem no seu repositório."
 
