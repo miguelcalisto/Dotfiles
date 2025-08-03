@@ -13,6 +13,7 @@ sudo apt install -y \
     dunst \
     wlogout \
     i3blocks \
+    gnome-screenshot \
     rofi \
     fish \
     zsh \
