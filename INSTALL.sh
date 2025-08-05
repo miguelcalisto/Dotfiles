@@ -90,6 +90,14 @@ ln -sf "$(pwd)/.config/picom/picom.conf" ~/.config/picom/picom.conf
 mkdir -p ~/.config/dunst
 ln -sf "$(pwd)/.config/dunst/dunstrc" ~/.config/dunst/dunstrc
 
+# Criar diretório para o wlogout, caso não exista
+mkdir -p ~/.config/wlogout
+ln -sf "$(pwd)/.config/wlogout/layout" ~/.config/wlogout/layout
+ln -sf "$(pwd)/.config/wlogout/style.css" ~/.config/wlogout/style.css
+
+echo "Configuração do wlogout aplicada!"
+
+
 # Finalizar
 echo "Instalação concluída! Reinicie sua sessão para aplicar as mudanças."
 
