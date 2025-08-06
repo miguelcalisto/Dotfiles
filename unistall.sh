@@ -5,42 +5,44 @@
 echo "Removendo links simbólicos dos arquivos de configuração..."
 
 # Arquivos da home
-rm -fv ~/.bashrc
-rm -fv ~/.zshrc
-rm -fv ~/.tmux.conf
-rm -fv ~/.vimrc
-# rm -fv ~/.p10k.zsh
+if [ -L ~/.bashrc ]; then unlink ~/.bashrc; fi
+if [ -L ~/.zshrc ]; then unlink ~/.zshrc; fi
+if [ -L ~/.tmux.conf ]; then unlink ~/.tmux.conf; fi
+if [ -L ~/.vimrc ]; then unlink ~/.vimrc; fi
+# if [ -L ~/.p10k.zsh ]; then unlink ~/.p10k.zsh; fi
 
 # Diretórios de configuração
-rm -fv ~/.config/i3/config
-rm -fv ~/.config/i3blocks/config
-rm -fv ~/.config/rofi/config.rasi
-rm -fv ~/.config/kitty/kitty.conf
-rm -fv ~/.config/neofetch/config.conf
-rm -fv ~/.config/htop/htoprc
-rm -fv ~/.config/btop/btop.conf
+if [ -L ~/.config/i3/config ]; then unlink ~/.config/i3/config; fi
+if [ -L ~/.config/i3blocks/config ]; then unlink ~/.config/i3blocks/config; fi
+if [ -L ~/.config/rofi/config.rasi ]; then unlink ~/.config/rofi/config.rasi; fi
+if [ -L ~/.config/kitty/kitty.conf ]; then unlink ~/.config/kitty/kitty.conf; fi
+if [ -L ~/.config/neofetch/config.conf ]; then unlink ~/.config/neofetch/config.conf; fi
+if [ -L ~/.config/htop/htoprc ]; then unlink ~/.config/htop/htoprc; fi
+if [ -L ~/.config/btop/btop.conf ]; then unlink ~/.config/btop/btop.conf; fi
 
 # Tilix schemes
-for scheme in .config/tilix/schemes/*; do
-    name=$(basename "$scheme")
-    rm -fv ~/.config/tilix/schemes/"$name"
+for scheme in ~/.config/tilix/schemes/*; do
+    if [ -L "$scheme" ]; then
+        unlink "$scheme"
+    fi
 done
 
 # Scripts
-for file in scripts/*; do
-    name=$(basename "$file")
-    rm -fv ~/scripts/"$name"
+for file in ~/scripts/*; do
+    if [ -L "$file" ]; then
+        unlink "$file"
+    fi
 done
 
-for file in SCRIPTS/*; do
-    name=$(basename "$file")
-    rm -fv ~/SCRIPTS/"$name"
+for file in ~/SCRIPTS/*; do
+    if [ -L "$file" ]; then
+        unlink "$file"
+    fi
 done
 
-rm -fv ~/.config/i3/powermenu.sh
-rm -fv ~/.config/i3blocks/power
-# Remover links do dunst
-rm -fv ~/.config/dunst/dunstrc
+if [ -L ~/.config/i3/powermenu.sh ]; then unlink ~/.config/i3/powermenu.sh; fi
+if [ -L ~/.config/i3blocks/power ]; then unlink ~/.config/i3blocks/power; fi
+if [ -L ~/.config/dunst/dunstrc ]; then unlink ~/.config/dunst/dunstrc; fi
 
 echo "Desinstalação concluída. Os arquivos reais permanecem no seu repositório."
 
