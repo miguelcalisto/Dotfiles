@@ -3,7 +3,6 @@
 [global]
     ### Display ###
 
-
     # Which monitor should the notifications be displayed on.
     monitor = 0
 
@@ -18,25 +17,23 @@
     #
     # If this option is set to mouse or keyboard, the monitor option
     # will be ignored.
-    follow = none
+    follow = mouse
 
     ### Geometry ###
 
     # dynamic width from 0 to 300
     # width = (0, 300)
     # constant width of 300
-    width = 150
+    width = (200, 1000)
 
     # The maximum height of a single notification, excluding the frame.
-    height = 300
+    height = 400
 
     # Position the notification in the top right corner
-    #origin = top-right
     origin = center
 
     # Offset from the origin
-    #offset = 10x50
-    offset = 0x0
+    offset = 10x50
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -71,35 +68,27 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
     # present (e.g. xcompmgr, compiz, etc.). (X11 only)
-    transparency = 0
+#    transparency = 15
 
     # Draw a line of "separator_height" pixel height between two
     # notifications.
     # Set to 0 to disable.
-    # If gap_size is greater than 0, this setting will be ignored.
-    separator_height = 2
+    separator_height = 1
 
     # Padding between text and separator.
     padding = 8
 
     # Horizontal padding.
-    horizontal_padding = 8
-
+    horizontal_padding = 10
+icon_position = off
     # Padding between text and icon.
-    text_icon_padding = 0
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 3
+    frame_width = 0
 
     # Defines color of the frame around the notification window.
-    frame_color = "#aaaaaa"
-
-    # Size of gap to display between notifications - requires a compositor.
-    # If value is greater than 0, separator_height will be ignored and a border
-    # of size frame_width will be drawn around each notification instead.
-    # Click events on gaps do not currently propagate to applications below.
-    gap_size = 0
+    frame_color = "#282a36"
 
     # Define a color for the separator.
     # possible values are:
@@ -117,7 +106,7 @@
     # Set to 0 to disable.
     # A client can set the 'transient' hint to bypass this. See the rules
     # section for how to disable this if necessary
-    # idle_threshold = 120
+    idle_threshold = 120
 
     ### Text ###
 
@@ -135,7 +124,7 @@
     #        <u>underline</u>
     #
     #        For a complete reference see
-    #        <https://docs.gtk.org/Pango/pango_markup.html>.
+    #        <https://developer.gnome.org/pango/stable/pango-Markup.html>.
     #
     # strip: This setting is provided for compatibility with some broken
     #        clients that send markup even though it's not enabled on the
@@ -161,11 +150,11 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "<b>%s</b>\n%b"
+    format = "%s %p\n%b"
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
-    alignment = left
+    alignment = center
 
     # Vertical alignment of message text and icon.
     # Possible values are "top", "center" and "bottom".
@@ -194,28 +183,16 @@
 
     ### Icons ###
 
-    # Recursive icon lookup. You can set a single theme, instead of having to
-    # define all lookup paths.
-    enable_recursive_icon_lookup = true
-
-    # Set icon theme (only used for recursive icon lookup)
-    icon_theme = Adwaita
-    # You can also set multiple icon themes, with the leftmost one being used first.
-    # icon_theme = "Adwaita, breeze"
-
-    # Align icons left/right/top/off
-    icon_position = left
+    # Align icons left/right/off
 
     # Scale small icons up to this size, set to 0 to disable. Helpful
     # for e.g. small files or high-dpi screens. In case of conflict,
     # max_icon_size takes precedence over this.
-    min_icon_size = 32
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 128
 
-    # Paths to default icons (only neccesary when not using recursive icon lookup)
-    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+    # Paths to default icons.
+#    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
     ### History ###
 
@@ -232,7 +209,7 @@
     dmenu = /usr/bin/dmenu -p dunst:
 
     # Browser for opening urls in context menu.
-    browser = /usr/bin/xdg-open
+    browser = /usr/bin/firefox -new-tab
 
     # Always run rule-defined scripts, even if the notification is suppressed
     always_run_script = true
@@ -311,26 +288,26 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#222222"
-    foreground = "#888888"
-    timeout = 2
+    background = "#282a36"
+    foreground = "#6272a4"
+    timeout = 3
     # Icon for notifications with low urgency, uncomment to enable
-    #default_icon = /path/to/icon
+    #new_icon = /path/to/icon
 
 [urgency_normal]
-    background = "#285577"
-    foreground = "#ffffff"
-    timeout = 2
+    background = "#282a36"
+    foreground = "#bd93f9"
+    timeout = 3
     # Icon for notifications with normal urgency, uncomment to enable
-    #default_icon = /path/to/icon
+    #new_icon = /path/to/icon
 
 [urgency_critical]
-    background = "#900000"
-    foreground = "#ffffff"
-    frame_color = "#ff0000"
-    timeout = 2
+    background = "#ff5555"
+    foreground = "#f8f8f2"
+    frame_color = "#ff5555"
+    timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable
-    #default_icon = /path/to/icon
+    #new_icon = /path/to/icon
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.
@@ -358,14 +335,12 @@
 #    set_category
 #    timeout
 #    urgency
-#    icon_position
 #    skip_display
 #    history_ignore
 #    action_name
 #    word_wrap
 #    ellipsize
 #    alignment
-#    hide_text
 #
 # Shell-like globbing will get expanded.
 #
