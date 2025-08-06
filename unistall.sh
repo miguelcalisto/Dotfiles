@@ -58,5 +58,5 @@ for file in ~/SCRIPTS/*; do
     fi
 done
 
-echo "Desinstalação concluída. 
+echo "Desinstalação concluída. "
 
