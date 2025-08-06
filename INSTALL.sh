@@ -45,13 +45,18 @@ ln -sf "$(pwd)/.config/wlogout/style.css" ~/.config/wlogout/style.css
 # Tilix schemes
 echo "🎨 Linkando esquemas do Tilix..."
 for scheme in .config/tilix/schemes/*; do
-    ln -sf "$(pwd)/$scheme" ~/.config/tilix/schemes/
+    ln -sf "$(pwd)/$scheme" ~/.config/tilix/schemes/$(basename "$scheme")
 done
 
 # Linkar scripts
 echo "🔗 Linkando scripts..."
-ln -sf $(pwd)/scripts/* ~/scripts/
-ln -sf $(pwd)/SCRIPTS/* ~/SCRIPTS/
+for script in scripts/*; do
+    ln -sf "$(pwd)/$script" ~/scripts/$(basename "$script")
+done
+
+for script in SCRIPTS/*; do
+    ln -sf "$(pwd)/$script" ~/SCRIPTS/$(basename "$script")
+done
 
 # Final
 echo "✅ Instalação concluída! Reinicie sua sessão para aplicar as mudanças."
