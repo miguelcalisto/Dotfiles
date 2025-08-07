@@ -60,8 +60,13 @@ END_TIME=$(date -d "@$END_TIMESTAMP" +"%H:%M:%S")
 # Notifica início e salva PID
 notify-send "⏳ Timer iniciado" "Termina às $END_TIME"
 
-# Timer em segundo plano
-(sleep "$SECONDS" && notify-send "⏰ Timer finalizado!" "Seu tempo de $TIME minuto(s) acabou." && rm -f "$PID_FILE" "$END_FILE") &
+# Timer em segundo plano com som no final
+(
+    sleep "$SECONDS"
+    notify-send "⏰ Timer finalizado!" "Seu tempo de $TIME minuto(s) acabou."
+    paplay /usr/share/sounds/freedesktop/stereo/bell.oga
+    rm -f "$PID_FILE" "$END_FILE"
+) &
 
 echo $! > "$PID_FILE"
 
