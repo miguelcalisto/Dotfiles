@@ -279,3 +279,5 @@ bindsym Mod4+Mod1+Right workspace next
 exec_always --no-startup-id /usr/bin/picom --config /home/debian/.config/picom/picom.conf --experimental-backends
 #exec_always --no-startup-id /usr/bin/picom --config /home/debian/.config/picom/picom.conf --experimental-backends
 
+bindsym $mod+t exec ~/scripts/timer-rofi.sh
+
