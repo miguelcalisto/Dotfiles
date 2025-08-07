@@ -10,19 +10,19 @@ Este repositório contém a minha configuração pessoal de **Dotfiles** para **
 - **[i3blocks](https://github.com/vivien/i3blocks)** (Barra de status para i3)
 - **Script que Muda o Wallpaper Todo Dia** [Link para o repositório](https://github.com/miguelcalisto/Script-para-mudar-de-wallpaper-todo-dia.git)
 - A maioria dos wallpapers são de:
-  - [GitHub - dharmx/walls](https://github.com/dharmx/walls/tree/main)
-  - [Unsplash](https://unsplash.com/)
-  - [Wallpapers.com](https://pt.wallpapers.com/)
-  - [Wallpaperflare](https://www.wallpaperflare.com/)
-  - [GitHub - Narmis-E/onedark-wallpapers](https://github.com/Narmis-E/onedark-wallpapers)
-  - [Wallhaven](https://wallhaven.cc/)
+- [GitHub - dharmx/walls](https://github.com/dharmx/walls/tree/main)
+- [Unsplash](https://unsplash.com/)
+- [Wallpapers.com](https://pt.wallpapers.com/)
+- [Wallpaperflare](https://www.wallpaperflare.com/)
+- [GitHub - Narmis-E/onedark-wallpapers](https://github.com/Narmis-E/onedark-wallpapers)
+- [Wallhaven](https://wallhaven.cc/)
 - **Fontes** [Nerd Fonts](https://www.nerdfonts.com/)
 ## Clonando
 
 1. **Clonar o Repositório**
 
 ```bash
-   git clone https://github.com/miguelcalisto/Dotfiles.git 
+git clone https://github.com/miguelcalisto/Dotfiles.git 
 ```
 
 ## Instalando Dependências
@@ -63,5 +63,5 @@ sudo chmod +x unistall.sh
 
 ![Screenshot 6](prints/testes.png)
 
-![Screenshot 7](prints/song.png)
-
+    ![Screenshot 7](prints/song.png)
+![Screenshot 8](prints/windows.png)
