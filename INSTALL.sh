@@ -78,6 +78,9 @@ for theme in .config/btop/themes/themes/*.theme; do
     ln -sf "$(pwd)/$theme" ~/.config/btop/themes/$(basename "$theme")
 done
 
+# Linkando o diretório do oh-my-zsh
+echo "🔗 Linkando configurações do oh-my-zsh..."
+ln -sf "$(pwd)/.oh-my-zsh" ~/.oh-my-zsh
 
 # Final
 echo "✅ Instalação concluída! Reinicie sua sessão para aplicar as mudanças."
