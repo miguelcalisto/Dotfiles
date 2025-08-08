@@ -70,6 +70,15 @@ for file in $(pwd)/.config/nvim/lua/user/*; do
     ln -sf "$file" ~/.config/nvim/lua/user/$(basename "$file")
 done
 
+# Temas do btop (com estrutura themes/themes/)
+echo "🎨 Linkando temas do btop..."
+mkdir -p ~/.config/btop/themes
+
+for theme in .config/btop/themes/themes/*.theme; do
+    ln -sf "$(pwd)/$theme" ~/.config/btop/themes/$(basename "$theme")
+done
+
+
 # Final
 echo "✅ Instalação concluída! Reinicie sua sessão para aplicar as mudanças."
 
