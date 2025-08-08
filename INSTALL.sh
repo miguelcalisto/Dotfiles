@@ -58,6 +58,18 @@ for script in SCRIPTS/*; do
     ln -sf "$(pwd)/$script" ~/SCRIPTS/$(basename "$script")
 done
 
+
+# Neovim
+echo "🔗 Linkando configurações do Neovim..."
+mkdir -p ~/.config/nvim/lua/user
+
+ln -sf "$(pwd)/.config/nvim/init.lua" ~/.config/nvim/init.lua
+ln -sf "$(pwd)/.config/nvim/lazy-lock.json" ~/.config/nvim/lazy-lock.json
+
+for file in $(pwd)/.config/nvim/lua/user/*; do
+    ln -sf "$file" ~/.config/nvim/lua/user/$(basename "$file")
+done
+
 # Final
 echo "✅ Instalação concluída! Reinicie sua sessão para aplicar as mudanças."
 
