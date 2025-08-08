@@ -12,7 +12,7 @@ echo "📦 Instalando pacotes essenciais..."
 sudo apt install -y \
     neovim i3 dunst wlogout i3blocks gnome-screenshot rofi fish zsh picom \
     tmux htop btop kitty cava systemd fonts-powerline git curl wget \
-    python3-pip python3-venv fonts-firacode i3-wm i3lock psensor
+    python3-pip ripgrep python3-venv fonts-firacode i3-wm i3lock psensor
 
 # Criar diretórios de configuração
 echo "📁 Criando diretórios de configuração..."
