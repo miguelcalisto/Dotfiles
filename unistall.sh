@@ -58,5 +58,21 @@ for file in ~/SCRIPTS/*; do
     fi
 done
 
-echo "Desinstalação concluída. "
+# Polybar
+remove_link ~/.config/polybar/config.ini
+remove_link ~/.config/polybar/launch.sh
+
+for file in ~/.config/polybar/scripts/*; do
+    if [ -L "$file" ]; then
+        unlink "$file"
+        echo "Removido link: $file"
+    fi
+done
+
+# Alacritty
+remove_link ~/.config/alacritty/alacritty.yml
+remove_link ~/.config/alacritty/dracula.toml
+
+
+echo "✅ Desinstalação concluída!"
 
