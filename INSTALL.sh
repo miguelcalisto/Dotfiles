@@ -79,6 +79,18 @@ for theme in .config/btop/themes/themes/*.theme; do
 done
 
 
+# Polybar
+echo "🔗 Linkando configurações do Polybar..."
+mkdir -p ~/.config/polybar
+
+ln -sf "$(pwd)/.config/polybar/config.ini" ~/.config/polybar/config.ini
+ln -sf "$(pwd)/.config/polybar/launch.sh" ~/.config/polybar/launch.sh
+
+mkdir -p ~/.config/polybar/scripts
+for script in .config/polybar/scripts/*; do
+    ln -sf "$(pwd)/$script" ~/.config/polybar/scripts/$(basename "$script")
+done
+
 # Final
 echo "✅ Instalação concluída! Reinicie sua sessão para aplicar as mudanças."
 
