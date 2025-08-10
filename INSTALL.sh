@@ -12,7 +12,8 @@ echo "📦 Instalando pacotes essenciais..."
 sudo apt install -y \
     neovim i3 dunst wlogout i3blocks gnome-screenshot rofi fish zsh picom \
     tmux htop btop kitty cava systemd fonts-powerline git curl wget \
-    python3-pip ripgrep python3-venv fonts-firacode i3-wm i3lock psensor
+    python3-pip ripgrep python3-venv fonts-firacode i3-wm i3lock psensor \
+    alacritty
 
 # Criar diretórios de configuração
 echo "📁 Criando diretórios de configuração..."
@@ -90,6 +91,13 @@ mkdir -p ~/.config/polybar/scripts
 for script in .config/polybar/scripts/*; do
     ln -sf "$(pwd)/$script" ~/.config/polybar/scripts/$(basename "$script")
 done
+
+# Alacritty
+mkdir -p ~/.config/alacritty
+
+echo "🔗 Linkando configurações do Alacritty..."
+ln -sf "$(pwd)/.config/alacritty/alacritty.yml" ~/.config/alacritty/alacritty.yml
+ln -sf "$(pwd)/.config/alacritty/dracula.toml" ~/.config/alacritty/dracula.toml
 
 # Final
 echo "✅ Instalação concluída! Reinicie sua sessão para aplicar as mudanças."

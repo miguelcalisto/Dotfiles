@@ -1,0 +1,42 @@
+window:
+  opacity: 0.50
+  decorations: full
+  dynamic_title: true
+
+font:
+  normal:
+    family: "Fira Code"
+    style: Regular
+  bold:
+    family: "Fira Code"
+    style: Bold
+  italic:
+    family: "Fira Code"
+    style: Italic
+  size: 14.0
+
+colors:
+  primary:
+    background: '0x282a36'
+    foreground: '0xf8f8f2'
+
+  normal:
+    black:   '0x21222c'
+    red:     '0xff5555'
+    green:   '0x50fa7b'
+    yellow:  '0xf1fa8c'
+    blue:    '0xbd93f9'
+    magenta: '0xff79c6'
+    cyan:    '0x8be9fd'
+    white:   '0xbfbfbf'
+
+  bright:
+    black:   '0x4d4d4d'
+    red:     '0xff6e6e'
+    green:   '0x69ff94'
+    yellow:  '0xffffa5'
+    blue:    '0xd6acff'
+    magenta: '0xff92df'
+    cyan:    '0xa4ffff'
+    white:   '0xffffff'
+
