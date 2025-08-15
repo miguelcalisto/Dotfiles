@@ -64,4 +64,4 @@ sudo chmod +x unistall.sh
 ![Screenshot 6](prints/testes.png)
 
 ![Screenshot 7](prints/song.png)
-![Screenshot 8](prints/windows.png)
+![Screenshot 8](prints/ultimo.png)
