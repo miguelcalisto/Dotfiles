@@ -29,14 +29,14 @@ if [ -f "$PID_FILE" ]; then
         TIME_LEFT=$(get_remaining_time)
         rofi -dmenu -p "Timer ativo (restam $TIME_LEFT). Cancelar? [y/N]" <<< "" | grep -qi "^y" && {
             kill "$PID"
-            notify-send "⏹️ Timer cancelado"
-            rm -f "$PID_FILE" "$END_FILE"
-            exit 0
-        }
-        exit 0
-    else
-        # PID não existe mais
-        rm -f "$PID_FILE" "$END_FILE"
+                    notify-send "⏹️ Timer cancelado"
+                    rm -f "$PID_FILE" "$END_FILE"
+                    exit 0
+                }
+                exit 0
+            else
+                # PID não existe mais
+                rm -f "$PID_FILE" "$END_FILE"
     fi
 fi
 
@@ -62,11 +62,13 @@ notify-send "⏳ Timer iniciado" "Termina às $END_TIME"
 
 # Timer em segundo plano com som no final
 (
-    sleep "$SECONDS"
-    notify-send "⏰ Timer finalizado!" "Seu tempo de $TIME minuto(s) acabou."
-    paplay /usr/share/sounds/freedesktop/stereo/bell.oga
-    rm -f "$PID_FILE" "$END_FILE"
+sleep "$SECONDS"
+notify-send "⏰ Timer finalizado!" "Seu tempo de $TIME minuto(s) acabou."
+paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
+
+rm -f "$PID_FILE" "$END_FILE"
 ) &
 
 echo $! > "$PID_FILE"
+
 
