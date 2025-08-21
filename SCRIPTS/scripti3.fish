@@ -5,7 +5,10 @@ set wallpaper_dir "$HOME/Imagens/topdotop"
 #set wallpaper_dir "$HOME/Imagens/bestsWallpapers"
 #set wallpaper_dir "$HOME/Imagens/bestsWallpapers"
 #set wallpaper_dir "$HOME/Imagens/Wallpapers"
-set wallpapers (ls -1S $wallpaper_dir | grep -iE '\.(png|jpe?g)$')  # Ordena por tamanho
+#não pega webp
+#set wallpapers (ls -1S $wallpaper_dir | grep -iE '\.(png|jpe?g)$')  # Ordena por tamanho
+
+set wallpapers (ls -1S $wallpaper_dir | grep -iE '\.(png|jpe?g|webp)$')  # Agora inclui .webp
 set num (count $wallpapers)
 
 if test $num -eq 0
