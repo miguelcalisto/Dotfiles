@@ -29,7 +29,7 @@ for ((i=0; i<3600; i++)); do
 done
 date=$(date +%H-%M)
 
-hora_atual=$(date +%H:%M)
+hora_atual=$(date)
 media=$(python3.11 media.py)
 echo "$media log de  $hora_atual" >> ~/MEDIAS.txt
 

@@ -124,10 +124,15 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 alias v="vim"
 
+alias ls="lsd"
+
+alias py="python3"
+
 alias n="vim"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias marktext='flatpak run com.github.marktext.marktext'
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=33'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -179,3 +184,6 @@ setopt SHARE_HISTORY            # compartilha histórico entre sessões
 
 # Opcional: melhora busca incremental com Ctrl+R
 bindkey "^R" history-incremental-search-backward
+
+
+
