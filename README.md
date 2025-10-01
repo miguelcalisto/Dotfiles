@@ -44,6 +44,7 @@ sudo chmod +x unistall.sh
 ./unistall.sh
 ````
 ## Aviso - mudando o teclado para pt-br 
+**Dependendo a distro o tipo do teclado pode não ser reconhecido!
 ````
 setxkbmap -model abnt2 -layout br
 echo 'exec --no-startup-id setxkbmap -model abnt2 -layout br' >> ~/.config/i3/config
