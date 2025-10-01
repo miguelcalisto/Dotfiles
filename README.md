@@ -43,6 +43,12 @@ sudo chmod +x INSTALL.sh
 sudo chmod +x unistall.sh
 ./unistall.sh
 ````
+## Aviso - mudando o teclado para pt-br 
+````
+setxkbmap -model abnt2 -layout br
+echo 'exec --no-startup-id setxkbmap -model abnt2 -layout br' >> ~/.config/i3/config
+````
+
 ## Capturas de Tela
 
 ![Screenshot 8](prints/lulaneofetch.png)
