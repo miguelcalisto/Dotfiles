@@ -99,6 +99,44 @@ echo "🔗 Linkando configurações do Alacritty..."
 ln -sf "$(pwd)/.config/alacritty/alacritty.yml" ~/.config/alacritty/alacritty.yml
 ln -sf "$(pwd)/.config/alacritty/dracula.toml" ~/.config/alacritty/dracula.toml
 
+# FONTES
+# Diretório onde as fontes serão instaladas
+FONT_DIR="$HOME/.fonts"
+
+# URL da fonte Hack Nerd Font
+FONT_URL="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Hack.zip"
+
+# Nome do arquivo ZIP temporário
+ZIP_FILE="/tmp/Hack.zip"
+
+# Criar diretório de fontes se não existir
+mkdir -p "$FONT_DIR"
+
+# Baixar a fonte
+echo "[+] Baixando Hack Nerd Font..."
+wget -O "$ZIP_FILE" "$FONT_URL"
+
+# Extrair os arquivos .ttf
+echo "[+] Extraindo arquivos .ttf..."
+unzip -o "$ZIP_FILE" -d /tmp/hack-fonts
+
+# Copiar os arquivos .ttf para ~/.fonts
+echo "[+] Instalando fontes em $FONT_DIR..."
+find /tmp/hack-fonts -name "*.ttf" -exec cp {} "$FONT_DIR" \;
+
+# Atualizar o cache de fontes
+echo "[+] Atualizando cache de fontes..."
+fc-cache -fv
+
+# Limpar arquivos temporários
+rm -rf "$ZIP_FILE" /tmp/hack-fonts
+
+echo "[✓] Hack Nerd Font instalada com sucesso!"
+
+
 # Final
 echo "✅ Instalação concluída! Reinicie sua sessão para aplicar as mudanças."
+
+
+
 
