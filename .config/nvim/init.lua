@@ -1,5 +1,3 @@
--- Bootstrap Lazy.nvim
-
 vim.g.mapleader = " "  -- Definindo o espaço como a tecla líder
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -39,4 +37,8 @@ vim.keymap.set('v', 'P', '"+P')
 vim.api.nvim_set_keymap('n', '<leader>ff', "<cmd>Telescope find_files<cr>", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('n', '<leader>fg', "<cmd>Telescope live_grep<cr>", { noremap = true, silent = true })
+
+
+
+
 

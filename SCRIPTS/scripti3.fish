@@ -8,7 +8,10 @@ set wallpaper_dir "$HOME/Imagens/novos-walls"
 #não pega webp
 #set wallpapers (ls -1S $wallpaper_dir | grep -iE '\.(png|jpe?g)$')  # Ordena por tamanho
 
-set wallpapers (ls -1S $wallpaper_dir | grep -iE '\.(png|jpe?g|webp)$')  # Agora inclui .webp
+#estava funcianando o de baixo
+#set wallpapers (ls -1S $wallpaper_dir | grep -iE '\.(png|jpe?g|webp)$')  # Agora inclui .webp
+set wallpapers (ls -1S $wallpaper_dir | grep -iE '\.(png|jpe?g|webp|svg)$')
+
 set num (count $wallpapers)
 
 if test $num -eq 0
@@ -29,4 +32,5 @@ echo "Mudando para o wallpaper do dia $day_of_year: $selected" >> /home/debian/S
 #feh --bg-scale $selected >> /home/debian/SCRIPTS/LOGS/log.log 2>&1
 
 feh --bg-scale "$selected" >> /home/debian/SCRIPTS/LOGS/log.log 2>&1
+
 

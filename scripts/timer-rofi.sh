@@ -71,3 +71,4 @@ notify-send "⏳ Timer iniciado" "Termina às $END_TIME"
 
 echo $! > "$PID_FILE"
 
+

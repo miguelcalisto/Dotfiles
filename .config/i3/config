@@ -261,7 +261,11 @@ bindsym $mod+F4 exec --no-startup-id amixer set Master 100% && notify-send -r 10
 
 #client.focused #4c7899 #285577 #ffffff #00aa00 #285577
 #client.focused #4c7899 #285577 #ffffff #FF0000 #285577
-client.focused #4c7899 #285577 #ffffff #00FF00 #285577
+#Vyclient.focused #4c7899 #285577 #ffffff #00FF00 #285577
+client.focused #4c7899 #285577 #ffffff #FF0000 #285577
+#tamanho da borad de vertical e jhorizontal e dibspores
+default_border pixel 5
+
 
 bindsym $mod+c exec diodon
 
@@ -291,3 +295,5 @@ exec_always --no-startup-id /usr/bin/picom --config /home/debian/.config/picom.c
 bindsym $mod+t exec ~/scripts/timer-rofi.sh
 
 
+#login duplço0i
+#exec --no-startup-id xss-lock -- i3lock -c 000000
