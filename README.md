@@ -43,12 +43,19 @@ sudo chmod +x INSTALL.sh
 sudo chmod +x unistall.sh
 ./unistall.sh
 ````
-## Aviso - mudando o teclado para pt-br 
+## Aviso - mudando o teclado para pt-br e baixando o Wallpapers.7z com lfs
 **Dependendo a distro o tipo do teclado pode não ser reconhecido!**
 ````
 setxkbmap -model abnt2 -layout br
 echo 'exec --no-startup-id setxkbmap -model abnt2 -layout br' >> ~/.config/i3/config
 ````
+**Para baixar os Wallpapers.7z lfs**
+```
+sudo apt-get install git-lfs
+git lfs install
+git lfs pull
+7z x Wallpapers.7z
+```
 
 ## Capturas de Tela
 
