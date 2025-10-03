@@ -28,7 +28,7 @@ git clone https://github.com/miguelcalisto/Dotfiles.git
 ## Instalando Dependências
 ```
 sudo apt update -y
-sudo apt install rofi neofetch vim neovim zsh fish tmux chafa i3blocks git diodon i3lock i3-wm pcmanfm tilix zsh fonts-firacode lxappearance  -y
+sudo apt install rofi neofetch vim neovim zsh fish tmux chafa i3blocks git diodon i3lock i3-wm pcmanfm tilix zsh fonts-firacode lxappearance -y
 
 ```
 ## Utilizando o INSTALL.sh
