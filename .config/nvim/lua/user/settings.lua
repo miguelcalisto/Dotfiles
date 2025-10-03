@@ -1,82 +1,95 @@
 -- Opções básicas de edição
-vim.opt.number = true                -- Mostra número das linhas
-vim.opt.relativenumber = false      -- Não usa numeração relativa
-vim.opt.wrap = true                  -- Quebra de linha automática
-vim.opt.mouse = "a"                 -- Ativa mouse em todos os modos
-vim.opt.tabstop = 4                 -- Número de espaços por <Tab>
-vim.opt.shiftwidth = 4              -- Número de espaços para indentação automática
-vim.opt.expandtab = true            -- Converte <Tab> em espaços
-vim.opt.autoindent = true           -- Mantém indentação de linha anterior
-vim.opt.smartindent = true          -- Indentação automática inteligente
-vim.opt.termguicolors = true        -- Habilita cores verdadeiras no terminal
-vim.opt.cursorline = true           -- Destaca a linha do cursor
+vim.opt.number = true
+vim.opt.relativenumber = false
+vim.opt.wrap = true
+vim.opt.mouse = "a"
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.opt.termguicolors = true
+vim.opt.cursorline = true
 
 -- Tecla líder
 vim.g.mapleader = " "
 
--- Configurações de plugins
--- Para evitar erros, carregue plugins só se estiverem instalados
-
--- nvim-tree setup
+-- Plugins básicos
 local ok, nvim_tree = pcall(require, "nvim-tree")
-if ok then
-    nvim_tree.setup()
-else
-    vim.notify("nvim-tree not found", vim.log.levels.WARN)
-end
+if ok then nvim_tree.setup() end
 
--- lualine setup
 local ok, lualine = pcall(require, "lualine")
-if ok then
-    lualine.setup()
-else
-    vim.notify("lualine not found", vim.log.levels.WARN)
-end
+if ok then lualine.setup() end
 
--- which-key setup
 local ok, which_key = pcall(require, "which-key")
-if ok then
-    which_key.setup()
-else
-    vim.notify("which-key not found", vim.log.levels.WARN)
-end
+if ok then which_key.setup() end
 
--- colorizer setup
 local ok, colorizer = pcall(require, "colorizer")
-if ok then
-    colorizer.setup()
-else
-    vim.notify("colorizer not found", vim.log.levels.WARN)
-end
+if ok then colorizer.setup() end
 
 -- Atalho para abrir/fechar o nvim-tree
 vim.keymap.set("n", "<leader>e", function()
     local api_ok, api = pcall(require, "nvim-tree.api")
     if api_ok then
         api.tree.toggle()
-    else
-        vim.notify("nvim-tree.api not found", vim.log.levels.WARN)
     end
 end, { desc = "Toggle NvimTree" })
 
--- Reindentação automática ao salvar (formatar arquivo)
+-- Reindentação automática ao salvar
 vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = "*",
-    callback = function()
-        vim.cmd("normal! gg=G")
-    end,
+    callback = function() vim.cmd("normal! gg=G") end,
 })
 
--- Cria diretórios automaticamente se não existirem ao salvar um arquivo
+-- Criar diretórios automaticamente
 vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = "*",
     callback = function()
         local dir = vim.fn.expand("<afile>:p:h")
         if vim.fn.isdirectory(dir) == 0 then
             vim.fn.mkdir(dir, "p")
-            vim.notify("Criado diretório: " .. dir, vim.log.levels.INFO)
         end
-    end
+    end,
 })
 
+-- SPLITS & BUFFERS
+vim.keymap.set("n", "<leader>sh", ":split<CR>", { desc = "Split Horizontal" })
+vim.keymap.set("n", "<leader>sv", ":vsplit<CR>", { desc = "Split Vertical" })
+vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move para esquerda" })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move para baixo" })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move para cima" })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move para direita" })
+vim.keymap.set("n", "<leader>q", ":close<CR>", { desc = "Fechar Split Atual" })
+vim.keymap.set("n", "<leader>bd", ":bd<CR>", { desc = "Fechar Buffer Atual" })
+vim.keymap.set("n", "<leader>bo", ":%bd|e#|bd#<CR>", { desc = "Fechar Todos Buffers Exceto Atual" })
 
+-- Alternar buffers com Tab/Shift+Tab
+vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", { desc = "Próximo Buffer" })
+vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { desc = "Buffer Anterior" })
+
+-- Criar marks locais com leader
+vim.keymap.set("n", "<leader>ma", "ma", { desc = "Criar mark a" })
+vim.keymap.set("n", "<leader>mb", "mb", { desc = "Criar mark b" })
+
+
+-- Abrir todas as imagens da pasta do arquivo atual (com feh mostrando nome da imagem)
+local function open_images_in_dir()
+  local dir = vim.fn.expand("%:p:h")  -- pega a pasta do arquivo atual
+  vim.cmd('!feh -d -x "' .. dir .. '"')
+end
+
+-- Mapear tanto i quanto I para a mesma função
+vim.keymap.set("n", "<leader>i", open_images_in_dir, { silent = true })
+vim.keymap.set("n", "<leader>I", open_images_in_dir, { silent = true })
+
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "python",
+  callback = function()
+    vim.lsp.start({
+      name = "pyright",
+      cmd = { "pyright-langserver", "--stdio" },
+      root_dir = vim.fn.getcwd(),
+    })
+  end,
+})

@@ -32,7 +32,10 @@ return {
         "nvim-telescope/telescope.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
         config = function()
-            require("telescope").setup({
+            local telescope = require("telescope")
+            local builtin = require("telescope.builtin")
+
+            telescope.setup({
                 defaults = {
                     vimgrep_arguments = {
                         'rg',
@@ -48,21 +51,15 @@ return {
                     },
                 },
                 pickers = {
-                    find_files = {
-                        hidden = true, -- inclui arquivos ocultos no find_files
-                    },
+                    find_files = { hidden = true },
                 },
             })
 
-            -- <leader>ff - busca arquivos, incluindo ocultos
-            vim.keymap.set("n", "<leader>ff", function()
-                require("telescope.builtin").find_files({ hidden = true })
-            end, { desc = "Find Files (ocultos incluídos)" })
-
-            -- <leader>fg - live_grep incluindo as pastas ignoradas no vimgrep_arguments
-            vim.keymap.set("n", "<leader>fg", function()
-                require("telescope.builtin").live_grep()
-            end, { desc = "Live Grep (ignorando .git, .Library, node_modules)" })
+            -- Atalhos
+            vim.keymap.set("n", "<leader>ff", function() builtin.find_files({ hidden = true }) end, { desc = "Find Files (ocultos)" })
+            vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Live Grep" })
+            vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "Arquivos Recentes" })
+            vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Buffers Abertos" })
         end,
     },
 
@@ -95,9 +92,7 @@ return {
 
             cmp.setup({
                 snippet = {
-                    expand = function(args)
-                        luasnip.lsp_expand(args.body)
-                    end,
+                    expand = function(args) luasnip.lsp_expand(args.body) end,
                 },
                 mapping = cmp.mapping.preset.insert({
                     ["<Tab>"] = cmp.mapping.select_next_item(),
@@ -121,6 +116,40 @@ return {
         config = function()
             require("gitsigns").setup()
         end
+    },
+
+    -- Bufferline (abas estilo VS Code)
+    {
+        "akinsho/bufferline.nvim",
+        version = "*",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        config = function()
+            require("bufferline").setup {
+                options = {
+                    mode = "buffers",
+                    separator_style = "slant",
+                    diagnostics = "nvim_lsp",
+                },
+            }
+
+            -- Navegar entre abas
+            vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", { silent = true })
+            vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { silent = true })
+        end,
+    },
+
+    -- Plugin para gerenciar marks
+    {
+        "kshenoy/vim-signature",
+        config = function()
+            vim.cmd("let g:signature_on = 1")         -- Ativa a visualização das marks na lateral
+            vim.cmd("let g:signature_map_keys = 0")  -- Desativa os keymaps padrão
+        end
+    },
+  -- Emmet para acelerar HTML/CSS (útil em Django templates)
+    {
+        "mattn/emmet-vim",
+        ft = { "html", "css", "django" },
     },
 }
 
