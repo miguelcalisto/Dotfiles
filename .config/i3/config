@@ -246,7 +246,9 @@ exec_always --no-startup-id ~/SCRIPTS/tampa.sh
 exec --no-startup-id fish /home/debian/SCRIPTS/scripti3.fish
 
 # Abrir interface gráfica de captura de tela (GNOME)
-bindsym Print exec --no-startup-id gnome-screenshot --interactive
+#bindsym Print exec --no-startup-id gnome-screenshot --interactive
+
+bindsym Print exec --no-startup-id env GTK_THEME=Adwaita gnome-screenshot --interactive
 
 #som
 #bindsym  $mod+F1 exec amixer set Master 5%-
@@ -297,3 +299,4 @@ bindsym $mod+t exec ~/scripts/timer-rofi.sh
 
 #login duplço0i
 #exec --no-startup-id xss-lock -- i3lock -c 000000
+
