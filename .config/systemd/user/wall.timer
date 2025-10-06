@@ -1,8 +1,8 @@
 [Unit]
-Description=Timer para mudar wallpaper à meia-noite
+Description=Timer para mudar wallpaper às 00:00 e 12:00
 
 [Timer]
-OnCalendar=00:00
+OnCalendar=00,12:00:00
 Persistent=true
 
 [Install]

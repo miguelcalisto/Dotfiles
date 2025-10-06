@@ -26,7 +26,8 @@ set day_of_year (date +%j)
 set index (math "($day_of_year - 1) % $num + 1")
 set selected "$wallpaper_dir/$wallpapers[$index]"
 
-echo "Mudando para o wallpaper do dia $day_of_year: $selected" >> /home/debian/SCRIPTS/LOGS/log.log
+set current_datetime (date "+%Y-%m-%d %H:%M:%S")
+echo "Mudando para o wallpaper do dia $day_of_year: $selected na data: $current_datetime" >> /home/debian/SCRIPTS/LOGS/log.log
 
 # Aplica o wallpaper com feh (compatível com i3)
 #feh --bg-scale $selected >> /home/debian/SCRIPTS/LOGS/log.log 2>&1
