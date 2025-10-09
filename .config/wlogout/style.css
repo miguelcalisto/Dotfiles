@@ -3,9 +3,6 @@
     background-image: none;
 }
 
-button:hover {
-    box-shadow: 0 0 10px #BD93F9;
-}
 window {
     background-color: rgba(40, 42, 54, 0.95); /* Fundo Dracula */
 }
