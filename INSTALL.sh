@@ -133,6 +133,9 @@ rm -rf "$ZIP_FILE" /tmp/hack-fonts
 
 echo "[✓] Hack Nerd Font instalada com sucesso!"
 
+#picom com transparecnia dual
+#cat "$(pwd)/.config/picom.conf" > ~/.config/picom.conf
+ln -sf "$(pwd)/.config/picom.conf" ~/.config/picom.conf
 
 # Final
 echo "✅ Instalação concluída! Reinicie sua sessão para aplicar as mudanças."
