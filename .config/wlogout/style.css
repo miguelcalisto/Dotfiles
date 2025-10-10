@@ -4,25 +4,26 @@
 }
 
 window {
-    background-color: rgba(40, 42, 54, 0.95); /* Fundo Dracula */
+    background-color: rgba(38, 43, 48, 0.95); /* Fundo escuro esverdeado */
 }
 
 button {
-    color: #F8F8F2; /* Texto claro */
-    background-color: #44475A; /* Botões em Current Line */
+    color: #E8FDF5; /* Texto menta-claro */
+    background-color: #2E3C3B; /* Fundo dos botões (cinza esverdeado) */
     border-style: solid;
     border-width: 2px;
-    border-color: #6272A4; /* Borda azulada Dracula */
+    border-color: #3DDC97; /* Verde menta vibrante */
     background-repeat: no-repeat;
     background-position: center;
     background-size: 25%;
-    border-radius: 8px; /* opcional: bordas arredondadas */
+    border-radius: 8px;
 }
 
 /* Efeitos de foco e hover */
 button:focus, button:active, button:hover {
-    background-color: #BD93F9; /* Roxo Dracula */
-    border-color: #FF79C6; /* Rosa */
+    background-color: #ffffff; 
+    border-color: #2ECC71; /* Verde Manjaro/Mint */
+    color: #1C1C1C; /* Texto escuro para contraste */
     outline-style: none;
 }
 
