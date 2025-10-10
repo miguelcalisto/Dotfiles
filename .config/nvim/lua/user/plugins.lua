@@ -172,5 +172,8 @@ return {
   ---@type oklch.Opts
   opts = {},
 },
+{ "nvzone/volt", lazy = true },
+
 }
+
 

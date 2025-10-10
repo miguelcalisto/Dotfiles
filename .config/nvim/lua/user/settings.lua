@@ -99,3 +99,5 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.keymap.set("n", "<leader>col", function()
   require("oklch-color-picker").pick_under_cursor()
 end, { silent = true, desc = "Color pick under cursor" })
+
+
