@@ -137,6 +137,14 @@ echo "[✓] Hack Nerd Font instalada com sucesso!"
 #cat "$(pwd)/.config/picom.conf" > ~/.config/picom.conf
 ln -sf "$(pwd)/.config/picom.conf" ~/.config/picom.conf
 
+
+# lsd
+echo "🔗 Linkando configurações do lsd..."
+mkdir -p ~/.config/lsd/themes
+
+ln -sf "$(pwd)/.config/lsd/config.yaml" ~/.config/lsd/config.yaml
+ln -sf "$(pwd)/.config/lsd/themes/colors.yaml" ~/.config/lsd/themes/colors.yaml
+
 # Final
 echo "✅ Instalação concluída! Reinicie sua sessão para aplicar as mudanças."
 
