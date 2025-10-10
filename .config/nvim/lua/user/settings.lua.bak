@@ -26,7 +26,7 @@ require("colorizer").setup()
 
 -- Atalho para abrir/fechar o nvim-tree
 vim.keymap.set("n", "<leader>e", function()
-  require("nvim-tree.api").tree.toggle()
+    require("nvim-tree.api").tree.toggle()
 end, { desc = "Toggle NvimTree" })
 
 
@@ -34,10 +34,10 @@ end, { desc = "Toggle NvimTree" })
 
 -- Reindentação automática ao salvar
 vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*",
-  callback = function()
-    vim.cmd("normal! gg=G")
-  end,
+    pattern = "*",
+    callback = function()
+        vim.cmd("normal! gg=G")
+    end,
 })
 
 
