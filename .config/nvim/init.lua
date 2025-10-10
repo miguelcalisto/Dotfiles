@@ -1,5 +1,6 @@
 vim.g.mapleader = " "  -- Definindo o espaço como a tecla líder
 
+vim.opt.termguicolors = true
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
