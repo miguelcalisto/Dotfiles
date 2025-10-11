@@ -146,6 +146,9 @@ ln -sf "$(pwd)/.config/lsd/colors.yaml" ~/.config/lsd/themes/colors.yaml
 mkdir -p ~/.config/fish
 ln -sf "$(pwd)/.config/fish/config.fish" ~/.config/fish/config.fish
 
+#tmux iniciar
+mkdir -p ~/.local/bin
+ln -sf "$(pwd)/.local/bin/tmux-wrapper.sh" ~/.local/bin/tmux-wrapper.sh
 
 # Final
 echo "✅ Instalação concluída! Reinicie sua sessão para aplicar as mudanças."
