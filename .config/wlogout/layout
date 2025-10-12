@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "i3lock",
+    "action" : "i3lock -c '#000000'",
     "text" : "Lock",
     "keybind" : "l"
 }

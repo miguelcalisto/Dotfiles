@@ -174,6 +174,14 @@ return {
 },
 { "nvzone/volt", lazy = true },
 
+{
+  "numToStr/Comment.nvim",
+  lazy = false,
+  config = function()
+    require("Comment").setup()
+  end,
+},
+
 }
 
 

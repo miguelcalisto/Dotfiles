@@ -187,3 +187,7 @@ bindkey "^R" history-incremental-search-backward
 
 
 
+
+# Created by `pipx` on 2025-10-02 12:06:34
+export PATH="$PATH:/home/debian/.local/bin"
+export PATH="$HOME/.local/bin:$PATH"

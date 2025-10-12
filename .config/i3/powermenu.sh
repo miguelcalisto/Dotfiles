@@ -4,7 +4,7 @@
 chosen=$(echo -e "  Bloquear\n⏻  Desligar\n  Reiniciar\n  Suspender\n󰍃  Encerrar Sessão\n  Cancelar" | rofi -dmenu -i -p "⚡ Power Menu")
 
 case "$chosen" in
-    "  Bloquear") i3lock ;;
+    "  Bloquear") i3lock -c 000000 ;;
     "⏻  Desligar") systemctl poweroff ;;
     "  Reiniciar") systemctl reboot ;;
     "  Suspender") systemctl suspend ;;

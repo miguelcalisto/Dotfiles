@@ -127,3 +127,4 @@ export PATH="$JAVA_HOME/bin:$PATH"
 if command -v tmux &>/dev/null && [ -z "$TMUX" ]; then
     tmux
 fi
+export PATH="$HOME/.local/bin:$PATH"

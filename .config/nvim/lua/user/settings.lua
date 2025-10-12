@@ -101,3 +101,32 @@ vim.keymap.set("n", "<leader>col", function()
 end, { silent = true, desc = "Color pick under cursor" })
 
 
+-- Normal mode: Ctrl + / comenta a linha atual
+vim.keymap.set("n", "<C-_>", function()
+  require("Comment.api").toggle.linewise.current()
+end, { desc = "Comentar linha atual" })
+
+-- Visual mode: Ctrl + / comenta seleção
+vim.keymap.set("v", "<C-_>", function()
+  require("Comment.api").toggle.linewise(vim.fn.visualmode())
+end, { desc = "Comentar seleção" })
+
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function()
+    vim.lsp.buf.format({ async = false })
+  end,
+})
+
+-- Formatar automaticamente com LSP ao salvar
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function()
+    local clients = vim.lsp.get_active_clients({ bufnr = vim.api.nvim_get_current_buf() })
+    if #clients == 0 then
+      return
+    end
+    vim.lsp.buf.format({ async = false })
+  end,
+})
