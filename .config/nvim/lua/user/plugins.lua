@@ -146,41 +146,41 @@ return {
             vim.cmd("let g:signature_map_keys = 0")  -- Desativa os keymaps padrão
         end
     },
-  -- Emmet para acelerar HTML/CSS (útil em Django templates)
+    -- Emmet para acelerar HTML/CSS (útil em Django templates)
     {
         "mattn/emmet-vim",
         ft = { "html", "css", "django" },
     },
-{
-  "NvChad/nvim-colorizer.lua",
-  config = function()
-    require("colorizer").setup()
-  end
-},
-{
-  "eero-lehtinen/oklch-color-picker.nvim",
-  event = "VeryLazy",
-  version = "*",
-  keys = {
-    -- One handed keymap recommended, you will be using the mouse
     {
-      "<leader>v",
-      function() require("oklch-color-picker").pick_under_cursor() end,
-      desc = "Color pick under cursor",
+        "NvChad/nvim-colorizer.lua",
+        config = function()
+            require("colorizer").setup()
+        end
     },
-  },
-  ---@type oklch.Opts
-  opts = {},
-},
-{ "nvzone/volt", lazy = true },
+    {
+        "eero-lehtinen/oklch-color-picker.nvim",
+        event = "VeryLazy",
+        version = "*",
+        keys = {
+            -- One handed keymap recommended, you will be using the mouse
+            {
+                "<leader>v",
+                function() require("oklch-color-picker").pick_under_cursor() end,
+                desc = "Color pick under cursor",
+            },
+        },
+        ---@type oklch.Opts
+        opts = {},
+    },
+    { "nvzone/volt", lazy = true },
 
-{
-  "numToStr/Comment.nvim",
-  lazy = false,
-  config = function()
-    require("Comment").setup()
-  end,
-},
+    {
+        "numToStr/Comment.nvim",
+        lazy = false,
+        config = function()
+            require("Comment").setup()
+        end,
+    },
 }
 
 
