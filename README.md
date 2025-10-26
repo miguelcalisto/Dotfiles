@@ -60,8 +60,7 @@ git lfs pull
 
 ##  Demonstração
 
-![img1](prints/preview.png)
-
-![img2](prints/preview01.png)
-
-![img3](prints/preview02.png)
+<p align="center">
+  <img src="prints/img01.png" width="45%">
+  <img src="prints/img02.png" width="45%">
+</p>
