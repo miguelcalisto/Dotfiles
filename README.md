@@ -58,6 +58,6 @@ git lfs pull
 ```
 
 
-## 🎥 Demonstração
+##  Demonstração
 
-[![Assista à demonstração](prints/preview.png)](prints/video.mp4)
+![img1](prints/preview.png)
