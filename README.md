@@ -60,5 +60,4 @@ git lfs pull
 
 ## 🎥 Demonstração
 
-
-[![Assista à demonstração](prints/preview.png)](prints/video.mkv)
+🎬 [Assista à demonstração no GitHub](prints/video.mp4)
