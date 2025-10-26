@@ -58,9 +58,13 @@ git lfs pull
 ```
 
 
-##  Demonstração
+## 🧩 Preview
 
-<p align="center">
-  <img src="prints/img01.png" width="45%">
-  <img src="prints/img02.png" width="45%">
-</p>
+![Preview principal](prints/preview.png)
+![Preview secundário](prints/preview01.png)
+---
+![Tela 1](prints/img01.png)
+![Tela 2](prints/img02.png)
+![Tela 3](prints/img03.png)
+![Tela 4](prints/img04.png)
+![Tela 5](prints/img05.png)
