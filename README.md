@@ -60,9 +60,8 @@ git lfs pull
 
 ## 🧩 Preview
 
-![Preview principal](prints/preview.png)
-![Preview secundário](prints/preview01.png)
----
+![Preview](prints/preview.png)
+![Preview01](prints/preview01.png)
 ![Tela 1](prints/img01.png)
 ![Tela 2](prints/img02.png)
 ![Tela 3](prints/img03.png)
