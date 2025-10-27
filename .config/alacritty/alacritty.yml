@@ -1,5 +1,5 @@
 window:
-  opacity: 0.90
+  opacity: 0.70       
   decorations: full
   dynamic_title: true
 
@@ -39,4 +39,3 @@ colors:
     magenta: '0xff92df'
     cyan:    '0xa4ffff'
     white:   '0xffffff'
-
