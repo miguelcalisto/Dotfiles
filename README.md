@@ -61,4 +61,3 @@ git lfs pull
 ## Preview
 
 ![Preview](prints/preview.png)
-![Tela 1](prints/img01.png)
