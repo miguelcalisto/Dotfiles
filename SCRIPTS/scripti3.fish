@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 
 
-set wallpaper_dir "$HOME/Imagens/novos-walls"
+set wallpaper_dir "$HOME/Imagens/Wallpapers"
 #set wallpaper_dir "$HOME/Imagens/bestsWallpapers"
 #set wallpaper_dir "$HOME/Imagens/bestsWallpapers"
 #set wallpaper_dir "$HOME/Imagens/Wallpapers"
