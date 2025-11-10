@@ -43,7 +43,7 @@ sudo chmod +x INSTALL.sh
 sudo chmod +x unistall.sh
 ./unistall.sh
 ````
-## Aviso - mudando o teclado para pt-br e baixando o Wallpapers.7z com [LFS](https://git-lfs.com/)
+## ⚠️Aviso - mudando o teclado para pt-br e baixando o Wallpapers.7z com [LFS](https://git-lfs.com/)
 **Dependendo a distro o tipo do teclado pode não ser reconhecido!**
 ````
 setxkbmap -model abnt2 -layout br
