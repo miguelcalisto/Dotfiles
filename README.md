@@ -58,6 +58,6 @@ git lfs pull
 ```
 
 
-## Preview
+## [Preview](https://github.com/miguelcalisto/Dotfiles/tree/main/prints)
 
 ![Preview](prints/preview.png)
