@@ -62,4 +62,3 @@ git lfs pull
 
 ![Preview](prints/preview.png)
 
-![Preview](preview.gif)
