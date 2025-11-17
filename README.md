@@ -60,5 +60,5 @@ git lfs pull
 
 ## [Preview](https://github.com/miguelcalisto/Dotfiles/tree/main/prints)
 
-![Preview](prints/preview.png)
+![Preview](prints/assets/preview.png)
 
