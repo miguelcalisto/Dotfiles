@@ -1,12 +1,20 @@
 # Imagens
-![img05](img05.png)
 
-![img03](img03.png)
+<p align="center">
+  <img src="img05.png" width="45%">
+  <img src="img03.png" width="45%">
+</p>
 
-![img01](img01.png)
+<p align="center">
+  <img src="img01.png" width="45%">
+  <img src="img02.png" width="45%">
+</p>
 
-![img02](img02.png)
+<p align="center">
+  <img src="img04.png" width="45%">
+  <img src="preview.png" width="45%">
+</p>
 
-![img04](img04.png)
-![preview](preview.png)
-![preview01](preview01.png)
+<p align="center">
+  <img src="preview01.png" width="45%">
+</p>
