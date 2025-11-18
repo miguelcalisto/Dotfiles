@@ -58,7 +58,7 @@ git lfs pull
 ```
 
 
-## [Preview](https://github.com/miguelcalisto/Dotfiles/tree/main/prints)
+## <a href="https://github.com/miguelcalisto/Dotfiles/tree/main/prints"><u>Preview</u></a>
 
 ![Preview](prints/assets/preview.png)
 
