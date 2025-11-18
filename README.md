@@ -57,8 +57,7 @@ git lfs pull
 7z x Wallpapers.7z
 ```
 
-
-## <a href="https://github.com/miguelcalisto/Dotfiles/tree/main/prints"><u>Preview</u></a>
+## [Preview](https://github.com/miguelcalisto/Dotfiles/tree/main/prints)
 
 ![Preview](prints/assets/preview.png)
 
