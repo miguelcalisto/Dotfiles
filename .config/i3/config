@@ -71,7 +71,9 @@ bindsym $mod+Tab exec rofi -show window
 #bindsym $mod+n exec nautilus
 
 bindsym $mod+Shift+i exec gnome-control-center
-bindsym $mod+n exec pcmanfm
+#bindsym $mod+n exec pcmanfm
+
+bindsym $mod+n exec thunar
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id dmenu_run
