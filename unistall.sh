@@ -2,7 +2,6 @@
 
 echo "Removendo links simbólicos dos arquivos de configuração..."
 
-# Função para remover link simbólico se existir e for link
 remove_link() {
     local target="$1"
     if [ -L "$target" ]; then
@@ -13,14 +12,11 @@ remove_link() {
     fi
 }
 
-# Arquivos da home
 remove_link ~/.bashrc
 remove_link ~/.zshrc
 remove_link ~/.tmux.conf
 remove_link ~/.vimrc
-# remove_link ~/.p10k.zsh
 
-# Diretórios de configuração
 remove_link ~/.config/i3/config
 remove_link ~/.config/i3blocks/config
 remove_link ~/.config/i3blocks/power
@@ -35,7 +31,6 @@ remove_link ~/.config/dunst/dunstrc
 remove_link ~/.config/wlogout/layout
 remove_link ~/.config/wlogout/style.css
 
-# Tilix schemes
 for scheme in ~/.config/tilix/schemes/*; do
     if [ -L "$scheme" ]; then
         unlink "$scheme"
@@ -43,7 +38,6 @@ for scheme in ~/.config/tilix/schemes/*; do
     fi
 done
 
-# Scripts
 for file in ~/scripts/*; do
     if [ -L "$file" ]; then
         unlink "$file"
@@ -58,7 +52,6 @@ for file in ~/SCRIPTS/*; do
     fi
 done
 
-# Polybar
 remove_link ~/.config/polybar/config.ini
 remove_link ~/.config/polybar/launch.sh
 
@@ -69,10 +62,7 @@ for file in ~/.config/polybar/scripts/*; do
     fi
 done
 
-# Alacritty
 remove_link ~/.config/alacritty/alacritty.yml
 remove_link ~/.config/alacritty/dracula.toml
 
-
 echo "✅ Desinstalação concluída!"
-

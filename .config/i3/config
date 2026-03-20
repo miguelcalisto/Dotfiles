@@ -55,12 +55,9 @@ floating_modifier $mod
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
 
-# start a terminal
-# ESSA È A CONF PADRÂO PARA ABRIRI O TILIX EU MUEI ABAIXO PARA O ALACARTY
 #bindsym $mod+Return exec i3-sensible-terminal 
 
 bindsym $mod+Return exec alacritty
-
 #tilix
 
 
@@ -177,7 +174,6 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-#foi mudado para um script em .config/i3/power*
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
@@ -210,46 +206,41 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 
-    exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 #bar {
 #status_command i3status
-    #status_command i3blocks
+#status_command i3blocks
 
 #exec_always --no-startup-id pkill polybar; polybar mybar &
 #position top
 
-   #     font pango:Hack 12
-  #      colors {
- #           statusline   #ffffff 
+#     font pango:Hack 12
+#      colors {
+#           statusline   #ffffff 
 # separator   #FFFFFF
 
 #                separator   #F8F8F2
 
 
 
-   #     }
+#     }
 
 
 #}
 
-#monitor
 #exec --no-startup-id xrandr --output HDMI-1 --primary --auto --output eDP-1 --off
 exec_always --no-startup-id ~/SCRIPTS/tampa.sh
 
 
-#picon transparencia
 #exec --no-startup-id picom &
 
 
 
-#wallpaper
-# wallpaper
 #exec --no-startup-id feh --bg-scale ~/Imagens/Wallpapers/a_group_of_palm_trees.jpg
 
 exec --no-startup-id fish /home/debian/SCRIPTS/scripti3.fish
 
-# Abrir interface gráfica de captura de tela (GNOME)
 #bindsym Print exec --no-startup-id gnome-screenshot --interactive
 
 bindsym Print exec --no-startup-id env GTK_THEME=Adwaita gnome-screenshot --interactive
@@ -259,7 +250,6 @@ bindsym Print exec --no-startup-id env GTK_THEME=Adwaita gnome-screenshot --inte
 #bindsym $mod+F2 exec amixer set Master 5%+
 #bindsym $mod+F3 exec amixer set Master 0%
 #bindsym $mod+F4 exec amixer set Master 100%
-# Som no centro da tela 
 bindsym $mod+F1 exec --no-startup-id amixer set Master 5%- && notify-send -r 1000 "Volume" "$(amixer get Master | grep -oP '\[\d+%\]' | head -n 1)"
 bindsym $mod+F2 exec --no-startup-id amixer set Master 5%+ && notify-send -r 1000 "Volume" "$(amixer get Master | grep -oP '\[\d+%\]' | head -n 1)"
 bindsym $mod+F3 exec --no-startup-id amixer set Master 0% && notify-send -r 1000 "Volume" "$(amixer get Master | grep -oP '\[\d+%\]' | head -n 1)"
@@ -269,14 +259,12 @@ bindsym $mod+F4 exec --no-startup-id amixer set Master 100% && notify-send -r 10
 #client.focused #4c7899 #285577 #ffffff #FF0000 #285577
 #Vyclient.focused #4c7899 #285577 #ffffff #00FF00 #285577
 client.focused #4c7899 #285577 #ffffff #FF0000 #285577
-#tamanho da borad de vertical e jhorizontal e dibspores
 default_border pixel 5
 
 
 bindsym $mod+c exec diodon
 
 bindsym $mod+x exec diodon
-#transparencia 
 #exec --no-startup-id picom &
 
 for_window [class="Brave-browser"] move to workspace current
@@ -288,7 +276,6 @@ for_window [class="Google-chrome"] move to workspace current
 
 bindsym $mod+Shift+e exec --no-startup-id ~/.config/i3/powermenu.sh
 
-# Navegar entre as workspaces usando Mod4 + Alt
 bindsym Mod4+Mod1+Left workspace prev
 bindsym Mod4+Mod1+Right workspace next
 #exec picom --config ~/.config/picom.conf --experimental-backends
@@ -301,6 +288,5 @@ exec_always --no-startup-id /usr/bin/picom --config /home/debian/.config/picom.c
 bindsym $mod+t exec ~/scripts/timer-rofi.sh
 
 
-#login duplço0i
 #exec --no-startup-id xss-lock -- i3lock -c 000000
 

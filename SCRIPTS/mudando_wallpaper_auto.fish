@@ -9,11 +9,9 @@ if test $num -eq 0
     exit 1
 end
 
-# Verifica se existe um arquivo com o índice da última imagem exibida
 if test -f "$HOME/.last_wallpaper_index"
     set index (cat $HOME/.last_wallpaper_index)
 else
-    # Começa do primeiro wallpaper se não houver arquivo
     set index 1
 end
 
@@ -21,17 +19,14 @@ while true
     set selected "$wallpaper_dir/$wallpapers[$index]"
     echo "Usando wallpaper $index: $selected"
     feh --bg-scale "$selected"
-    
-    # Salva o índice atual para continuar na próxima execução
+
     echo $index > $HOME/.last_wallpaper_index
 
-    # Aguarda 3 segundos
     sleep 5
 
-    # Incrementa o índice para a próxima imagem
     set index (math "$index + 1")
     if test $index -gt $num
-        set index 1  # Se passar do número de imagens, reinicia
+        set index 1  
     end
 end
 

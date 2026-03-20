@@ -1,13 +1,10 @@
 #!/bin/bash
 
-# Script para instalar os dotfiles no Debian
-
-set -e  # Encerra em caso de erro
+set -e
 
 echo "🔧 Atualizando o sistema e instalando dependências..."
 sudo apt update && sudo apt upgrade -y
 
-# Pacotes essenciais
 echo "📦 Instalando pacotes essenciais..."
 sudo apt install -y \
     neovim i3 dunst wlogout i3blocks gnome-screenshot rofi fish zsh picom \
@@ -15,19 +12,15 @@ sudo apt install -y \
     python3-pip ripgrep python3-venv fonts-firacode i3-wm i3lock psensor \
     alacritty polybar pcmanfm
 
-# Criar diretórios de configuração
 echo "📁 Criando diretórios de configuração..."
 mkdir -p ~/.config/{i3,i3blocks,rofi,kitty,neofetch,htop,btop,picom,dunst,wlogout,tilix/schemes,systemd/user}
 mkdir -p ~/scripts ~/SCRIPTS
 
-# Linkar arquivos de configuração da home
 echo "🔗 Linkando arquivos da home..."
 for file in .bashrc .zshrc .tmux.conf .vimrc; do
     ln -sf "$(pwd)/$file" ~/"$file"
 done
-# ln -sf "$(pwd)/.p10k.zsh" ~/.p10k.zsh  # Descomentável se necessário
 
-# Linkar arquivos do .config
 echo "🔗 Linkando arquivos do .config..."
 ln -sf "$(pwd)/.config/i3/config" ~/.config/i3/config
 ln -sf "$(pwd)/.config/i3blocks/config" ~/.config/i3blocks/config
@@ -43,13 +36,11 @@ ln -sf "$(pwd)/.config/dunst/dunstrc" ~/.config/dunst/dunstrc
 ln -sf "$(pwd)/.config/wlogout/layout" ~/.config/wlogout/layout
 ln -sf "$(pwd)/.config/wlogout/style.css" ~/.config/wlogout/style.css
 
-# Tilix schemes
 echo "🎨 Linkando esquemas do Tilix..."
 for scheme in .config/tilix/schemes/*; do
     ln -sf "$(pwd)/$scheme" ~/.config/tilix/schemes/$(basename "$scheme")
 done
 
-# Linkar scripts
 echo "🔗 Linkando scripts..."
 for script in scripts/*; do
     ln -sf "$(pwd)/$script" ~/scripts/$(basename "$script")
@@ -59,8 +50,6 @@ for script in SCRIPTS/*; do
     ln -sf "$(pwd)/$script" ~/SCRIPTS/$(basename "$script")
 done
 
-
-# Neovim
 echo "🔗 Linkando configurações do Neovim..."
 mkdir -p ~/.config/nvim/lua/user
 
@@ -71,7 +60,6 @@ for file in $(pwd)/.config/nvim/lua/user/*; do
     ln -sf "$file" ~/.config/nvim/lua/user/$(basename "$file")
 done
 
-# Temas do btop (com estrutura themes/themes/)
 echo "🎨 Linkando temas do btop..."
 mkdir -p ~/.config/btop/themes
 
@@ -79,8 +67,6 @@ for theme in .config/btop/themes/themes/*.theme; do
     ln -sf "$(pwd)/$theme" ~/.config/btop/themes/$(basename "$theme")
 done
 
-
-# Polybar
 echo "🔗 Linkando configurações do Polybar..."
 mkdir -p ~/.config/polybar
 
@@ -92,67 +78,46 @@ for script in .config/polybar/scripts/*; do
     ln -sf "$(pwd)/$script" ~/.config/polybar/scripts/$(basename "$script")
 done
 
-# Alacritty
 mkdir -p ~/.config/alacritty
 
 echo "🔗 Linkando configurações do Alacritty..."
 ln -sf "$(pwd)/.config/alacritty/alacritty.yml" ~/.config/alacritty/alacritty.yml
 ln -sf "$(pwd)/.config/alacritty/dracula.toml" ~/.config/alacritty/dracula.toml
 
-# FONTES
-# Diretório onde as fontes serão instaladas
 FONT_DIR="$HOME/.fonts"
 
-# URL da fonte Hack Nerd Font
 FONT_URL="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Hack.zip"
 
-# Nome do arquivo ZIP temporário
 ZIP_FILE="/tmp/Hack.zip"
 
-# Criar diretório de fontes se não existir
 mkdir -p "$FONT_DIR"
 
-# Baixar a fonte
 echo "[+] Baixando Hack Nerd Font..."
 wget -O "$ZIP_FILE" "$FONT_URL"
 
-# Extrair os arquivos .ttf
 echo "[+] Extraindo arquivos .ttf..."
 unzip -o "$ZIP_FILE" -d /tmp/hack-fonts
 
-# Copiar os arquivos .ttf para ~/.fonts
 echo "[+] Instalando fontes em $FONT_DIR..."
 find /tmp/hack-fonts -name "*.ttf" -exec cp {} "$FONT_DIR" \;
 
-# Atualizar o cache de fontes
 echo "[+] Atualizando cache de fontes..."
 fc-cache -fv
 
-# Limpar arquivos temporários
 rm -rf "$ZIP_FILE" /tmp/hack-fonts
 
 echo "[✓] Hack Nerd Font instalada com sucesso!"
 
-#picom com transparecnia dual
-#cat "$(pwd)/.config/picom.conf" > ~/.config/picom.conf
 ln -sf "$(pwd)/.config/picom.conf" ~/.config/picom.conf
 
-#LSD
 mkdir -p ~/.config/lsd/themes
 ln -sf "$(pwd)/.config/lsd/themes/config.yaml" ~/.config/lsd/config.yaml
 ln -sf "$(pwd)/.config/lsd/colors.yaml" ~/.config/lsd/themes/colors.yaml
 
-#fish config
 mkdir -p ~/.config/fish
 ln -sf "$(pwd)/.config/fish/config.fish" ~/.config/fish/config.fish
 
-#tmux iniciar
 mkdir -p ~/.local/bin
 ln -sf "$(pwd)/.local/bin/tmux-wrapper.sh" ~/.local/bin/tmux-wrapper.sh
 
-# Final
 echo "✅ Instalação concluída! Reinicie sua sessão para aplicar as mudanças."
-
-
-
-

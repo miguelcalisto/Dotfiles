@@ -8,7 +8,6 @@ set expandtab
 set autoindent
 set smartindent
 
-" Plugin manager
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'norcalli/nvim-colorizer.lua'
@@ -16,10 +15,9 @@ call plug#end()
 
 set termguicolors
 
-" Tema Catppuccin
 lua << EOF
 require("catppuccin").setup({
-    flavour = "mocha", -- latte, frappe, macchiato
+flavour = "mocha", 
 })
 EOF
 
@@ -33,16 +31,16 @@ highlight CursorLineNr guifg=#facc15 guibg=NONE gui=bold
 " Colorizer
 lua << EOF
 require'colorizer'.setup({
-  '*', -- aplica a todos os tipos de arquivo
+'*', 
 }, {
-  RGB      = true;
-  RRGGBB   = true;
-  names    = false;
-  RRGGBBAA = true;
-  rgb_fn   = true;
-  hsl_fn   = true;
-  css      = true;
-  css_fn   = true;
+    RGB      = true;
+    RRGGBB   = true;
+    names    = false;
+    RRGGBBAA = true;
+    rgb_fn   = true;
+    hsl_fn   = true;
+    css      = true;
+    css_fn   = true;
 })
 EOF
 

@@ -1,54 +1,55 @@
 return {
-    -- Tema
     {
         "catppuccin/nvim",
         name = "catppuccin",
         priority = 1000,
     },
 
-    -- Color highlight
     {
         "norcalli/nvim-colorizer.lua",
     },
 
-    -- Lazy (gerenciador de plugins)
     {
         "folke/lazy.nvim",
     },
 
-    -- Arquivos
     {
         "nvim-tree/nvim-tree.lua",
         dependencies = { "nvim-tree/nvim-web-devicons" },
     },
 
-    -- Barra de status
     {
         "nvim-lualine/lualine.nvim",
     },
 
-    -- Telescope
     {
         "nvim-telescope/telescope.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
         config = function()
-            require("telescope").setup {}
-            vim.api.nvim_set_keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { noremap = true, silent = true })
-            vim.api.nvim_set_keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { noremap = true, silent = true })
+            require("telescope").setup({})
+            vim.api.nvim_set_keymap(
+                "n",
+                "<leader>ff",
+                "<cmd>Telescope find_files<cr>",
+                { noremap = true, silent = true }
+            )
+            vim.api.nvim_set_keymap(
+                "n",
+                "<leader>fg",
+                "<cmd>Telescope live_grep<cr>",
+                { noremap = true, silent = true }
+            )
         end,
     },
 
-    -- Which Key
     {
         "folke/which-key.nvim",
     },
 
-    -- LSP
     {
         "neovim/nvim-lspconfig",
     },
 
-    -- Autocomplete
     {
         "hrsh7th/nvim-cmp",
         dependencies = {
@@ -87,4 +88,3 @@ return {
         end,
     },
 }
-

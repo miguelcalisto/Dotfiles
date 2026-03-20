@@ -2,11 +2,9 @@
 
 date_inicio=$(date +%H-%M)
 arquivo="temperaturas_cpu.txt"
-> "$arquivo"  # Limpa o arquivo
+>"$arquivo"
 
-# Coleta por 3600 segundos (1 hora)
-for ((i=0; i<3600; i++)); do
-    # Pega temperaturas dos núcleos
+for ((i = 0; i < 3600; i++)); do
     temperaturas=$(sensors | grep -E 'Core [0-9]:' | awk '{print $3}' | sed 's/+//;s/°C//')
 
     soma=0
@@ -19,7 +17,7 @@ for ((i=0; i<3600; i++)); do
 
     if [ $contador -gt 0 ]; then
         media=$(echo "scale=2; $soma / $contador" | bc)
-        echo "$media" >> "$arquivo"
+        echo "$media" >>"$arquivo"
         echo "[$i] Média: $media°C"
     else
         echo "[$i] Nenhum núcleo encontrado."
@@ -31,10 +29,7 @@ date=$(date +%H-%M)
 
 hora_atual=$(date)
 media=$(python3.11 media.py)
-echo "$media log de  $hora_atual" >> ~/MEDIAS.txt
+echo "$media log de  $hora_atual" >>~/MEDIAS.txt
 
 echo INCIO $date_inicio
 echo FIM $date
-
-
-

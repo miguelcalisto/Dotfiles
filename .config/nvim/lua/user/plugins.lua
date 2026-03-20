@@ -1,33 +1,27 @@
 return {
-    -- Tema
     {
         "catppuccin/nvim",
         name = "catppuccin",
         priority = 1000,
     },
 
-    -- Color highlight
     {
         "norcalli/nvim-colorizer.lua",
     },
 
-    -- Lazy (gerenciador de plugins)
     {
         "folke/lazy.nvim",
     },
 
-    -- Arquivos
     {
         "nvim-tree/nvim-tree.lua",
         dependencies = { "nvim-tree/nvim-web-devicons" },
     },
 
-    -- Barra de status
     {
         "nvim-lualine/lualine.nvim",
     },
 
-    -- Telescope
     {
         "nvim-telescope/telescope.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
@@ -38,16 +32,19 @@ return {
             telescope.setup({
                 defaults = {
                     vimgrep_arguments = {
-                        'rg',
-                        '--color=never',
-                        '--no-heading',
-                        '--with-filename',
-                        '--line-number',
-                        '--column',
-                        '--smart-case',
-                        '--glob', '!.git/*',
-                        '--glob', '!.Library/*',
-                        '--glob', '!node_modules/*',
+                        "rg",
+                        "--color=never",
+                        "--no-heading",
+                        "--with-filename",
+                        "--line-number",
+                        "--column",
+                        "--smart-case",
+                        "--glob",
+                        "!.git/*",
+                        "--glob",
+                        "!.Library/*",
+                        "--glob",
+                        "!node_modules/*",
                     },
                 },
                 pickers = {
@@ -55,25 +52,23 @@ return {
                 },
             })
 
-            -- Atalhos
-            vim.keymap.set("n", "<leader>ff", function() builtin.find_files({ hidden = true }) end, { desc = "Find Files (ocultos)" })
+            vim.keymap.set("n", "<leader>ff", function()
+                builtin.find_files({ hidden = true })
+            end, { desc = "Find Files (ocultos)" })
             vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Live Grep" })
             vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "Arquivos Recentes" })
             vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Buffers Abertos" })
         end,
     },
 
-    -- Which Key
     {
         "folke/which-key.nvim",
     },
 
-    -- LSP
     {
         "neovim/nvim-lspconfig",
     },
 
-    -- Autocomplete
     {
         "hrsh7th/nvim-cmp",
         dependencies = {
@@ -92,7 +87,9 @@ return {
 
             cmp.setup({
                 snippet = {
-                    expand = function(args) luasnip.lsp_expand(args.body) end,
+                    expand = function(args)
+                        luasnip.lsp_expand(args.body)
+                    end,
                 },
                 mapping = cmp.mapping.preset.insert({
                     ["<Tab>"] = cmp.mapping.select_next_item(),
@@ -110,43 +107,38 @@ return {
         end,
     },
 
-    -- Gitsigns para mostrar alterações no gutter
     {
         "lewis6991/gitsigns.nvim",
         config = function()
             require("gitsigns").setup()
-        end
+        end,
     },
 
-    -- Bufferline (abas estilo VS Code)
     {
         "akinsho/bufferline.nvim",
         version = "*",
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
-            require("bufferline").setup {
+            require("bufferline").setup({
                 options = {
                     mode = "buffers",
                     separator_style = "slant",
                     diagnostics = "nvim_lsp",
                 },
-            }
+            })
 
-            -- Navegar entre abas
             vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", { silent = true })
             vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { silent = true })
         end,
     },
 
-    -- Plugin para gerenciar marks
     {
         "kshenoy/vim-signature",
         config = function()
-            vim.cmd("let g:signature_on = 1")         -- Ativa a visualização das marks na lateral
-            vim.cmd("let g:signature_map_keys = 0")  -- Desativa os keymaps padrão
-        end
+            vim.cmd("let g:signature_on = 1")
+            vim.cmd("let g:signature_map_keys = 0")
+        end,
     },
-    -- Emmet para acelerar HTML/CSS (útil em Django templates)
     {
         "mattn/emmet-vim",
         ft = { "html", "css", "django" },
@@ -155,17 +147,18 @@ return {
         "NvChad/nvim-colorizer.lua",
         config = function()
             require("colorizer").setup()
-        end
+        end,
     },
     {
         "eero-lehtinen/oklch-color-picker.nvim",
         event = "VeryLazy",
         version = "*",
         keys = {
-            -- One handed keymap recommended, you will be using the mouse
             {
                 "<leader>v",
-                function() require("oklch-color-picker").pick_under_cursor() end,
+                function()
+                    require("oklch-color-picker").pick_under_cursor()
+                end,
                 desc = "Color pick under cursor",
             },
         },
@@ -182,5 +175,3 @@ return {
         end,
     },
 }
-
-

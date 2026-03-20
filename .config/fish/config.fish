@@ -1,17 +1,13 @@
-# ~/.config/fish/config.fish
 
 if status is-interactive
     if not set -q TMUX
-         ~/.local/bin/tmux-wrapper.sh
+        ~/.local/bin/tmux-wrapper.sh
     end
 end
-# Desativa a mensagem de boas-vindas do fish
 set fish_greeting ""
-# Histórico de comandos
 set -U fish_history_max_count 10000
 
 functions -e fish_greeting
-# Alias e bindings
 alias history='history | tac | nl'
 alias ls='lsd'
 alias py='python3'
