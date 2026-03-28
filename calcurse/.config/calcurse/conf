@@ -1,0 +1,47 @@
+# --- APARÊNCIA ---
+#
+appearance.calendarview=monthly
+appearance.compactpanels=no
+appearance.defaultpanel=calendar
+appearance.layout=1
+appearance.headerline=yes
+appearance.eventseparator=yes
+appearance.dayseparator=yes
+appearance.emptyline=yes
+appearance.emptyday=--
+appearance.notifybar=yes
+appearance.sidebarwidth=6
+appearance.theme=green on default
+appearance.todoview=hide-completed
+appearance.headingpos=right-justified
+
+# --- FORMATOS ---
+format.inputdate=1
+format.notifydate=%a %F
+format.notifytime=%T
+format.outputdate=%D
+format.dayheading=%B %e, %Y
+
+# --- GERAL ---
+general.autogc=no
+general.autosave=yes
+general.confirmdelete=yes
+general.confirmquit=yes
+general.firstdayofweek=monday
+general.multipledays=yes
+general.periodicsave=0
+general.systemevents=yes
+
+# --- DAEMON ---
+daemon.enable=yes
+daemon.log=yes
+
+# --- NOTIFICAÇÕES 
+notification.warning=60
+notification.notifyall=all
+
+#notification.command=notify-send -u critical -t 0 "Agendamento" "$OUTPUT"
+notification.command=~/.config/calcurse/notificar.sh
+
+
+

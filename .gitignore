@@ -1,0 +1,5 @@
+
+*.bak
+node_modules
+pack
+lazy-lock.json

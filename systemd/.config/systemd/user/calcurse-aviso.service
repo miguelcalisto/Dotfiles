@@ -1,0 +1,9 @@
+[Unit]
+Description=Calcurse - Avisar agendamentos próximos
+
+[Service]
+Type=oneshot
+ExecStart=%h/.config/calcurse/avisar_proximo.sh
+
+Environment=DISPLAY=:0
+Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/%U/bus

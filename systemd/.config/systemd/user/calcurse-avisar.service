@@ -1,0 +1,6 @@
+[Unit]
+Description=Notificações do calcurse
+
+[Service]
+Type=oneshot
+ExecStart=%h/.config/calcurse/atraso.sh
