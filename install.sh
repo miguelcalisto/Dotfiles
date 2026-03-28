@@ -23,6 +23,8 @@ sudo apt install -y \
     python3-pip ripgrep python3-venv fonts-firacode i3-wm i3lock psensor \
     alacritty polybar pcmanfm
 
+sudo apt install stow --yes
+
 pipx ensurepath
 mkdir -p /usr/local/lib/node_modules
 

@@ -1,6 +1,6 @@
 # Dotfiles para Debian 12 com i3wm, Rofi, Zsh, Vim , Neovim , i3blocks , Fish , Tmux .
 
-Este repositório contém a minha configuração pessoal de **Dotfiles** para **Debian 12** com as seguintes ferramentas:
+Este repositório contém a minha configuração pessoal de **Dotfiles** para **Debian 12** com GNU-STOW:
 
 - **[i3wm](https://i3wm.org/)** (Gerenciador de janelas)
 - **[Rofi](https://draculatheme.com/rofi)** (Lançador de aplicativos)
