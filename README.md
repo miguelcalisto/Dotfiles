@@ -39,7 +39,7 @@ stow */
 
 ## Remover
 
-**isso vai remover os links simbolicos do Dotfiles em .config**
+**isso vai remover os links simbolicos do Dotfiles em .config e home**
 
 ```
 stow -D */
