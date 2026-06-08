@@ -9,4 +9,4 @@
 
 <img src="assets/preview01.png" >
 
-<img src="assets/preview.png" >
+<img src="assets/wall.png" >
