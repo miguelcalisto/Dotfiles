@@ -41,6 +41,8 @@ sudo chmod +x install.sh
 
 ```
 stow -D */
+systemctl --user disable wall.timer
+systemctl --user disable wall.service
 ```
 
 ## Aviso - mudando o teclado para pt-br e baixando o Wallpapers.7z com [LFS](https://git-lfs.com/)
