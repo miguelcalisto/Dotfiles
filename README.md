@@ -33,8 +33,6 @@ git clone https://github.com/miguelcalisto/Dotfiles.git
 cd Dotfiles
 sudo chmod +x install.sh
 ./install.sh
-stow */
-./after.sh
 ```
 
 ## Remover

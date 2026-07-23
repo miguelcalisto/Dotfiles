@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+sudo -v
 sudo apt update && sudo apt install -y \
     git stow curl wget unzip build-essential pkg-config cmake \
     python3 python3-pip python3-venv pipx \
@@ -24,6 +24,8 @@ sudo apt update && sudo apt install -y \
 chsh -s /usr/bin/fish
 
 mkdir -p ~/Imagens/Wallpapers/
+
+stow */
 
 fc-cache -fv
 

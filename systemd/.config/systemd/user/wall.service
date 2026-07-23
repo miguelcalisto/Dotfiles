@@ -5,5 +5,5 @@ Description=Mudar wallpaper à meia-noite
 Type=oneshot
 Environment="DISPLAY=:0"
 Environment="DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus"
-ExecStart=/usr/bin/fish /home/debian/SCRIPTS/scripti3.fish
+ExecStart=/usr/bin/bash /home/debian/scripts/change-wallpapers-auto.sh
 
