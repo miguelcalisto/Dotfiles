@@ -32,6 +32,7 @@ mkdir -p ~/Imagens/Wallpapers/
 mkdir -p ~/.config/systemd/user/
 
 stow */
+fish -c "fisher update"
 
 fc-cache -fv
 
