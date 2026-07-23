@@ -253,7 +253,7 @@ exec_always --no-startup-id ~/scripts/tampa.sh
 # wallpaper
 #exec --no-startup-id feh --bg-scale ~/Imagens/Wallpapers/a_group_of_palm_trees.jpg
 
-exec --no-startup-id bash ~/scripts/change-wallpapers-auto.sh    
+exec --no-startup-id bash ~/.config/change-wallpaper/script.sh
 
 #bindsym Print exec --no-startup-id gnome-screenshot --interactive
 
