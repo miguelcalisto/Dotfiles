@@ -112,6 +112,7 @@ label-empty-padding = 1
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:40:...%
+#acima no 40 é definido os caracteres do titulo das janelas do polybar o tomnanho deles
 
 
 [module/filesystem]
@@ -304,24 +305,24 @@ label-warn = "Temp: %temperature%°"
 label-warn-foreground = ${colors.alert}
 
 # clima
-[module/weather]
-type = custom/script
+ [module/weather]
+ type = custom/script
 # exec = curl -s "wttr.in/Santa+Maria?format=1" | awk '{print $2}'
-exec = curl -s "wttr.in/Silveira+Martins?format=1" | awk '{print $2}'
-interval = 600
-label = %output%
-label-foreground= ${colors.a}
+ exec = curl -s "wttr.in/Silveira+Martins?format=1" | awk '{print $2}'
+ interval = 600
+ label = %output%
+ label-foreground= ${colors.a}
 
 
 ; brilho
-[module/brightness]
-type = custom/script
-exec = bash -c 'b=$(cat /sys/class/backlight/intel_backlight/brightness); m=$(cat /sys/class/backlight/intel_backlight/max_brightness); p=$((b*100/m)); echo "${p}%"'
-interval = 5
+ [module/brightness]
+ type = custom/script
+ exec = bash -c 'b=$(cat /sys/class/backlight/intel_backlight/brightness); m=$(cat /sys/class/backlight/intel_backlight/max_brightness); p=$((b*100/m)); echo "${p}%"'
+ interval = 5
 
 # label-foreground= ${colors.alert}
 
-label-foreground= ${colors.b}
+ label-foreground= ${colors.b}
 
 
 [module/load]

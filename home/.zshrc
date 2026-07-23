@@ -171,20 +171,18 @@ eval "$(mise activate zsh)"
 
 
 
-#historico
 
-# Aumenta o número de comandos mantidos no histórico
-HISTSIZE=100000            
-SAVEHIST=100000           
+HISTSIZE=100000      
+SAVEHIST=100000       
 
 HISTFILE=~/.zsh_history
 
-setopt APPEND_HISTORY           
-setopt HIST_IGNORE_DUPS         
+setopt APPEND_HISTORY         
+setopt HIST_IGNORE_DUPS        
 setopt HIST_IGNORE_ALL_DUPS     
-setopt HIST_REDUCE_BLANKS       
-setopt INC_APPEND_HISTORY       
-setopt SHARE_HISTORY            
+setopt HIST_REDUCE_BLANKS  
+setopt INC_APPEND_HISTORY   
+setopt SHARE_HISTORY         
 
 bindkey "^R" history-incremental-search-backward
 

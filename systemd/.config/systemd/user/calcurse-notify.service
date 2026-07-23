@@ -1,9 +1,0 @@
-[Unit]
-Description=Calcurse - Notificar agendamentos passados
-
-[Service]
-Type=oneshot
-ExecStart=%h/.config/calcurse/atraso.sh
-
-Environment=DISPLAY=:0
-Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/%U/bus

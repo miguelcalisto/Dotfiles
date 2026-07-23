@@ -16,7 +16,8 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.U
-font pango:monospace 8 
+# font pango:monospace 8 
+font pango:Hack Nerd Font 10
 
 
 
@@ -60,7 +61,6 @@ floating_modifier $mod
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
-
 #bindsym $mod+Return exec i3-sensible-terminal 
 
 bindsym $mod+Return exec alacritty
@@ -77,7 +77,9 @@ bindsym $mod+Tab exec rofi -show window
 bindsym $mod+Shift+i exec gnome-control-center
 #bindsym $mod+n exec pcmanfm
 
-bindsym $mod+n exec thunar
+bindsym $mod+n exec nautilus
+
+
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id dmenu_run
@@ -181,6 +183,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
+#foi mudado para um script em .config/i3/power*
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
@@ -247,13 +250,17 @@ exec_always --no-startup-id ~/SCRIPTS/tampa.sh
 
 
 #wallpaper
+# wallpaper
 #exec --no-startup-id feh --bg-scale ~/Imagens/Wallpapers/a_group_of_palm_trees.jpg
 
 exec --no-startup-id fish /home/debian/SCRIPTS/scripti3.fish
 
 #bindsym Print exec --no-startup-id gnome-screenshot --interactive
 
-bindsym Print exec --no-startup-id env GTK_THEME=Adwaita gnome-screenshot --interactive
+# bindsym Print exec --no-startup-id env GTK_THEME=Adwaita gnome-screenshot --interactive
+
+bindsym Print exec flameshot gui
+
 
 #som
 #bindsym  $mod+F1 exec amixer set Master 5%-
@@ -334,6 +341,7 @@ exec_always --no-startup-id sh -c 'feh --bg-fill "$(grep "Mudando para o wallpap
 
 
 
+# Calcurse – avisos após login gráfico exec so executa uma vez 
 exec --no-startup-id sh -c 'sleep 5 && systemctl --user start calcurse-notify.service'
 exec --no-startup-id sh -c 'sleep 60 && systemctl --user start calcurse-aviso.service'
 
