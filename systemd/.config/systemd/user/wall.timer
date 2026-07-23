@@ -1,9 +1,0 @@
-[Unit]
-Description=Timer para mudar wallpaper às 00:00 e 12:00
-
-[Timer]
-OnCalendar=00:00
-Persistent=true
-
-[Install]
-WantedBy=timers.target
