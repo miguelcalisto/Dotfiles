@@ -25,9 +25,7 @@ chsh -s /usr/bin/fish
 
 mkdir -p ~/Imagens/Wallpapers/
 mkdir -p ~/.config/systemd/user/
+mv ~/.bashrc ~/.bashrc.bak
 stow */
 
 fc-cache -fv
-
-# apenas para testes tem que remover
-cp ./prints/assets/* ~/Imagens/Wallpapers/
