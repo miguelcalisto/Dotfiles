@@ -21,26 +21,13 @@ sudo apt update && sudo apt install -y \
     python3-pip ripgrep python3-venv fonts-firacode i3-wm i3lock psensor \
     alacritty polybar pcmanfm stow
 
-fish -c '
-curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source
-fisher update
-'
-
 chsh -s /usr/bin/fish
 
 mkdir -p ~/Imagens/Wallpapers/
 mkdir -p ~/.config/systemd/user/
-
 stow */
-fish -c "fisher update"
 
 fc-cache -fv
 
 # apenas para testes tem que remover
 cp ./prints/assets/* ~/Imagens/Wallpapers/
-
-systemctl --user daemon-reload
-
-systemctl --user enable --now \
-    wall.service \
-    wall.timer
