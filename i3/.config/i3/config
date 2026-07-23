@@ -241,7 +241,7 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 #monitor
 #exec --no-startup-id xrandr --output HDMI-1 --primary --auto --output eDP-1 --off
-exec_always --no-startup-id ~/SCRIPTS/tampa.sh
+exec_always --no-startup-id ~/scripts/tampa.sh
 
 
 #picon transparencia
@@ -253,7 +253,7 @@ exec_always --no-startup-id ~/SCRIPTS/tampa.sh
 # wallpaper
 #exec --no-startup-id feh --bg-scale ~/Imagens/Wallpapers/a_group_of_palm_trees.jpg
 
-exec --no-startup-id fish /home/debian/SCRIPTS/scripti3.fish
+exec --no-startup-id fish /home/debian/scripts/scripti3.fish
 
 #bindsym Print exec --no-startup-id gnome-screenshot --interactive
 
@@ -337,7 +337,7 @@ exec_always --no-startup-id dunst
 
 #exec_always --no-startup-id sleep 5 && ~/.config/calcurse/atraso.sh
 
-exec_always --no-startup-id sh -c 'feh --bg-fill "$(grep "Mudando para o wallpaper" ~/SCRIPTS/LOGS/log.log | tail -n 1 | sed -E "s/.*: (.*) na data:.*/\1/")"'
+exec_always --no-startup-id sh -c 'feh --bg-fill "$(grep "Mudando para o wallpaper" ~/log.log | tail -n 1 | sed -E "s/.*: (.*) na data:.*/\1/")"'
 
 
 
