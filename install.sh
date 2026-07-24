@@ -19,7 +19,7 @@ sudo apt update && sudo apt install -y \
     i3 dunst wlogout i3blocks gnome-screenshot rofi fish zsh picom \
     tmux htop btop kitty cava systemd fonts-powerline git curl wget \
     python3-pip ripgrep python3-venv fonts-firacode i3-wm i3lock psensor \
-    alacritty polybar pcmanfm stow
+    alacritty polybar pcmanfm stow flameshot nautilus tree
 
 chsh -s /usr/bin/fish
 
